@@ -18,11 +18,11 @@ const image = images[`../../assets/${logo}`] as ImageMetadata | undefined;
 ---
 
 <a class="contact-card" href={href}>
+
+	<span class="contact-card__label">{label}</span>
 	{image && (
 		<img class="contact-card__logo" src={image.src} alt={label} />
 	)}
-
-	<span class="contact-card__label">{label}</span>
 	{description && (
 		<span class="contact-card__description">{description}</span>
 	)}
