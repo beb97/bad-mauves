@@ -1,0 +1,76 @@
+---
+interface Props {
+	href: string;
+	logo: string;
+	label: string;
+	description?: string;
+}
+
+const { href, logo, label, description } = Astro.props;
+
+const images = import.meta.glob("../../assets/*", {
+	eager: true,
+	import: "default",
+});
+
+const image = images[`../../assets/${logo}`] as ImageMetadata | undefined;
+
+---
+
+<a class="contact-card" href={href}>
+	{image && (
+		<img class="contact-card__logo" src={image.src} alt={label} />
+	)}
+
+	<span class="contact-card__label">{label}</span>
+	{description && (
+		<span class="contact-card__description">{description}</span>
+	)}
+</a>
+
+<style>
+	.contact-card {
+		width: 200px;
+		min-height: 120px;
+		padding: 0.5rem;
+		border-radius: 1.25rem;
+		border: 2px solid transparent;
+		background: linear-gradient(135deg, var(--color-active), transparent);
+		color: var(--color-text);
+		text-decoration: none;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+
+		text-align: center;
+		transition:
+			transform 0.2s ease,
+			border-color 0.2s ease,
+			background 0.2s ease;
+	}
+
+	.contact-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--color-active);
+		background: var(--color-active);
+	}
+
+	.contact-card__logo {
+		width: 48px;
+		height: 48px;
+		object-fit: contain;
+	}
+
+	.contact-card__label {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
+	.contact-card__description {
+		font-size: 0.9rem;
+		opacity: 0.85;
+	}
+</style>

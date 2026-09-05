@@ -1,7 +1,7 @@
 ---
+import {withBase} from "../utils/paths.ts";
 const currentPath = Astro.url.pathname;
 
-const withBase = (path:string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 const links = [
 	{ href: withBase(""), label: "Le club" },
