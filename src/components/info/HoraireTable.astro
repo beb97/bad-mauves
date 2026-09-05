@@ -1,0 +1,80 @@
+---
+const horaires_cours = [
+{
+    public: "Enfant",
+    jour: "mardi",
+    debut: "18h30",
+    fin: "19h30",
+    encadrement: "Cours",
+    },
+{
+    public: "Ado/Adulte",
+    jour: "mardi",
+    debut: "19h30",
+    fin: "20h30",
+    encadrement: "Cours",
+    },
+{
+    public: "Adulte",
+    jour: "mardi",
+    debut: "20h30",
+    fin: "21h30",
+    encadrement: "Cours",
+    }
+];
+
+const horaires_libre = [
+{
+    public: "Adulte",
+    jour: "mardi",
+    debut: "20h30",
+    fin: "22h30",
+    encadrement: "Libre",
+    },
+{
+    public: "Adultes",
+    jour: "jeudi",
+    debut: "20h30",
+    fin: "22h30",
+    encadrement: "Libre",
+    },
+{
+    public: "Adultes",
+    jour: "samedi",
+    debut: "10h45",
+    fin: "12h45",
+    encadrement: "Libre",
+    },
+];
+
+---
+<table>
+  <tbody>
+  {horaires_libre.map((horaire) => (
+      <tr>
+        <td>{horaire.jour}</td>
+        <td>{horaire.debut}</td>
+        <td>{horaire.fin}</td>
+      </tr>
+  ))}
+  </tbody>
+</table>
+
+<h2 id="summary-title">Cours encadrés</h2>
+<table>
+  <thead>
+  <tr>
+    <th></th>
+    <th>Mardi</th>
+  </tr>
+  </thead>
+  <tbody>
+  {horaires_cours.map((horaire) => (
+      <tr>
+        <!--<td>{horaire.jour}</td>-->
+        <td>{horaire.public}</td>
+        <td>{horaire.debut} {horaire.fin}</td>
+      </tr>
+  ))}
+  </tbody>
+</table>

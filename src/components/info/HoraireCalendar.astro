@@ -1,0 +1,165 @@
+---
+import {
+    debutJournee,
+    finJournee,
+    formaterHeure,
+    heureEnMinutes,
+    heures,
+    horaires,
+    jours,
+    libelleEncadrement,
+    type Horaire,
+    } from "../../data/horaires";
+
+
+const debutJourneeMinutes = heureEnMinutes(debutJournee);
+const finJourneeMinutes = heureEnMinutes(finJournee);
+const dureeJourneeMinutes = finJourneeMinutes - debutJourneeMinutes;
+const largeurJourPourcentage = 100 / jours.length;
+
+function styleCreneau(horaire: Horaire): string {
+  const jourIndex = jours.indexOf(horaire.jour);
+
+  const debut = heureEnMinutes(horaire.debut);
+  const fin = heureEnMinutes(horaire.fin);
+
+  const top = ((debut - debutJourneeMinutes) / dureeJourneeMinutes) * 100;
+  const height = ((fin - debut) / dureeJourneeMinutes) * 100;
+  const left = jourIndex * largeurJourPourcentage;
+
+  return `
+    top: ${top}%;
+    height: ${height}%;
+    left: calc(${left}% + 0.35rem);
+    width: calc(${largeurJourPourcentage}% - 0.7rem);
+  `;
+}
+---
+<section class="agenda">
+  <div class="agenda-header"></div>
+
+  {jours.map((jour) => (
+      <div class="agenda-day">
+        {jour}
+      </div>
+  ))}
+
+  <div class="agenda-body">
+    <div class="hours">
+      {heures.map((heure) => (
+          <div class="hour">{formaterHeure(heure)}</div>
+      ))}
+    </div>
+
+    <div class="calendar-grid">
+      {jours.map(() => (
+          <div class="day-column"></div>
+      ))}
+
+      {horaires.map((horaire) => (
+          <div
+              class:list={[
+                "event",
+                horaire.encadrement === "cours" ? "event-cours" : "event-libre",
+              ]}
+              style={styleCreneau(horaire)}
+          >
+            <!--<strong>{horaire.public}</strong>-->
+            <small>
+              {formaterHeure(horaire.debut)} - {formaterHeure(horaire.fin)}
+            </small>
+          </div>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .agenda {
+    max-width: 1200px;
+    margin: 2rem auto;
+    font-family: system-ui, sans-serif;
+    display: grid;
+    grid-template-columns: 70px repeat(5, 1fr);
+  }
+
+  .agenda-header {
+    grid-column: 1;
+  }
+
+  .agenda-day {
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .agenda-body {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    height: 650px;
+  }
+
+  .hours {
+    display: grid;
+    grid-template-rows: repeat(13, 1fr);
+    color: #666;
+  }
+
+  .hour {
+    border-top: 1px solid #eee;
+    padding-top: 0.25rem;
+  }
+
+  .calendar-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #eee 0,
+            #eee 1px,
+            transparent 1px,
+            transparent calc(100% / 13)
+        );
+  }
+
+  .day-column {
+    border-left: 1px solid #eee;
+  }
+
+  .day-column:last-of-type {
+    border-right: 1px solid #eee;
+  }
+
+  .event {
+    position: absolute;
+    left: 0.35rem;
+    right: 0.35rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .event strong,
+  .event span,
+  .event small {
+    display: block;
+    color: black;
+  }
+
+  .event-cours {
+    background: #dbeafe;
+    border: 1px solid #93c5fd;
+    color: black;
+
+  }
+
+  .event-libre {
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    color: black;
+  }
+</style>

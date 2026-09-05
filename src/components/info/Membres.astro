@@ -1,0 +1,52 @@
+---
+const bureau = [
+    {
+        nom: "Franck Robinet",
+        role: "Président",
+    },
+    {
+        nom: "Katia Lauzanne",
+        role: "Trésorière",
+    },
+    {
+        nom: "Jean-Philippe Le Calvez",
+        role: "Trésorier adjoint",
+    },
+    {
+        nom: "Fanny Graffard",
+        role: "Secrétaire",
+    },
+];
+
+const membres = [
+    "Olivier Ploteau",
+    "Maxime Caiveau",
+    "Chloé Boucault",
+];
+---
+<div class="members-grid">
+    <article class="members-card">
+        <h3>Le bureau</h3>
+
+        <ul class="member-list">
+            {bureau.map((personne) => (
+                    <li>
+                        <span class="member-name">{personne.nom}</span>
+                        <span class="member-role">{personne.role}</span>
+                    </li>
+            ))}
+        </ul>
+    </article>
+
+    <article class="members-card">
+        <h3>Les membres</h3>
+
+        <ul class="member-list simple">
+            {membres.map((membre) => (
+                    <li>
+                        <span class="member-name">{membre}</span>
+                    </li>
+            ))}
+        </ul>
+    </article>
+</div>

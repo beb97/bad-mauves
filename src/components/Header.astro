@@ -1,0 +1,72 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+	{ href: "/", label: "Le club" },
+	{ href: "/infos", label: "Infos pratiques" },
+	{ href: "/contact", label: "Contact" },
+];
+
+const isActive = (href: string) => {
+	if (href === "/") {
+		return currentPath === "/";
+	}
+	return currentPath.startsWith(href);
+};
+---
+
+<header>
+	<nav>
+		<ul>
+			{links.map((link) => (
+				<li
+					class:list={{ active: isActive(link.href) }}
+				>
+					<a href={link.href}
+					   class:list={{ active: isActive(link.href) }}
+					   aria-current={isActive(link.href) ? "page" : undefined}
+					>
+						{link.label}
+					</a>
+				</li>
+			))}
+		</ul>
+	</nav>
+</header>
+
+<style>
+
+	header {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	ul {
+		display: flex;
+		justify-content: space-around;
+		list-style: none;
+	}
+
+
+	li {
+		padding: 1em;
+		border: 2px solid transparent;
+		border-radius: 2em;
+	}
+
+	li.active {
+		background: linear-gradient(135deg, var(--color-active), transparent);
+	}
+
+	li:hover {
+		border: 2px solid red;
+		border-color: var(--color-active);
+		background: var(--color-active);
+	}
+
+	a.active {
+		font-weight: bold;
+		color: var(--color-text);
+	}
+</style>
