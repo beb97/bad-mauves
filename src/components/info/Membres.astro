@@ -1,18 +1,23 @@
 ---
+import Membre from "@components/info/Membre.astro";
 const bureau = [
     {
+        initiales: "FR",
         nom: "Franck Robinet",
         role: "Président",
     },
     {
+        initiales: "KL",
         nom: "Katia Lauzanne",
         role: "Trésorière",
     },
     {
+        initiales: "JPL",
         nom: "Jean-Philippe Le Calvez",
         role: "Trésorier adjoint",
     },
     {
+        initiales: "FG",
         nom: "Fanny Graffard",
         role: "Secrétaire",
     },
@@ -26,27 +31,35 @@ const membres = [
 ---
 <div class="members-grid">
     <article class="members-card">
+        <section class="members-section">
         <h3>Le bureau</h3>
 
-        <ul class="member-list">
-            {bureau.map((personne) => (
-                    <li>
-                        <span class="member-name">{personne.nom}</span>
-                        <span class="member-role">{personne.role}</span>
-                    </li>
-            ))}
-        </ul>
+            <div class="member-list">
+                {bureau.map((personne) => (
+                        <Membre
+                                initiales={personne.initiales}
+                                nom={personne.nom}
+                                role={personne.role}
+                        />
+                ))}
+            </div>
+        </section>
     </article>
 
-    <article class="members-card">
-        <h3>Les membres</h3>
-
-        <ul class="member-list simple">
-            {membres.map((membre) => (
-                    <li>
-                        <span class="member-name">{membre}</span>
-                    </li>
-            ))}
-        </ul>
-    </article>
+    <!--<article class="members-card">-->
+    <!--    <h3>Les membres</h3>-->
+    <!--    <ul class="member-list simple">-->
+    <!--        {membres.map((membre) => (-->
+    <!--                <li>-->
+    <!--                    <span class="member-name">{membre}</span>-->
+    <!--                </li>-->
+    <!--        ))}-->
+    <!--    </ul>-->
+    <!--</article>-->
 </div>
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+</style>

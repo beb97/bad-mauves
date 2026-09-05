@@ -1,0 +1,93 @@
+---
+interface Props {
+  public: string;
+  jour: string;
+  debut: string;
+  fin: string;
+  encadrement: string;
+}
+
+const {
+  public: publicConcerne,
+  jour,
+  debut,
+  fin,
+  encadrement,
+} = Astro.props;
+---
+
+<article class="horaire-card">
+  <div class="horaire-card__day">
+    {jour}
+  </div>
+
+  <div class="horaire-card__content">
+    <h4 class="horaire-card__public">
+      {publicConcerne}
+    </h4>
+
+    <p class="horaire-card__time">
+      {debut} - {fin}
+    </p>
+
+    <!--<p class="horaire-card__type">-->
+    <!--  {encadrement}-->
+    <!--</p>-->
+  </div>
+</article>
+
+<style>
+  .horaire-card {
+    width: 220px;
+    min-height: 160px;
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+    background: linear-gradient(135deg, var(--color-active), transparent);
+    color: var(--color-text);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+
+    text-align: center;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+  }
+
+  .horaire-card:hover {
+    transform: translateY(-4px);
+    background: var(--color-active);
+  }
+
+  .horaire-card__day {
+    min-width: 88px;
+    padding: 0.50rem 0.5rem;
+    border-radius: 999px;
+    background: var(--color-text);
+    color: var(--color-background);
+
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: capitalize;
+  }
+
+  .horaire-card__public {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .horaire-card__time {
+    margin: 0.25rem 0 0;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .horaire-card__type {
+    margin: 0.25rem 0 0;
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+</style>
