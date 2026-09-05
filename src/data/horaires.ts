@@ -14,9 +14,6 @@ export type Horaire = {
 
 export type Heure = `${number}:${number}`;
 
-export const debutJournee: Heure = "10:00";
-export const finJournee: Heure = "23:00";
-
 export const heures: Heure[] = [
     "10:00",
     "11:00",
@@ -81,19 +78,3 @@ export const horairesLibre: Horaire[] = [
         encadrement: "libre",
     },
 ];
-
-export const horaires = [...horairesLibre, ...horairesCours] satisfies Horaire[];
-
-export function heureEnMinutes(heure: Heure): number {
-    const [heures, minutes] = heure.split(":").map(Number);
-
-    return heures * 60 + minutes;
-}
-
-export function formaterHeure(heure: Heure): string {
-    return heure.replace(":", "h");
-}
-
-export function libelleEncadrement(encadrement: Encadrement): string {
-    return encadrement === "cours" ? "Cours" : "Libre";
-}

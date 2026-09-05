@@ -6,5 +6,5 @@ import vue from '@astrojs/vue';
 export default defineConfig({
     integrations: [vue()],
     site: 'https://beb97.github.io',
-    base: '/bad-mauves',
+    base: '/bad-mauves/',
 });

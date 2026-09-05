@@ -1,10 +1,12 @@
 ---
 const currentPath = Astro.url.pathname;
 
+const withBase = (path:string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 const links = [
-	{ href: "/", label: "Le club" },
-	{ href: "/infos", label: "Infos pratiques" },
-	{ href: "/contact", label: "Contact" },
+	{ href: withBase(""), label: "Le club" },
+	{ href: withBase("infos"), label: "Infos pratiques" },
+	{ href: withBase("contact"), label: "Contact" },
 ];
 
 const isActive = (href: string) => {
