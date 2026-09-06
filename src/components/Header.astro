@@ -4,14 +4,14 @@ const currentPath = Astro.url.pathname;
 
 
 const links = [
-	{ href: withBase("/"), label: "Le club" },
+	{ href: withBase(""), label: "Le club" },
 	{ href: withBase("infos"), label: "Infos pratiques" },
 	{ href: withBase("contact"), label: "Contact" },
 ];
 
 const isActive = (href: string) => {
-	if (href === "/") {
-		return currentPath === "/";
+	if (href === withBase("/")) {
+		return currentPath === withBase("/");
 	}
 	return currentPath.startsWith(href);
 };
@@ -52,7 +52,7 @@ const isActive = (href: string) => {
 
 
 	li {
-		padding: 1em;
+		padding: 0.5em;
 		border: 2px solid transparent;
 		border-radius: 2em;
 	}
