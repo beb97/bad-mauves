@@ -1,18 +1,4 @@
-export const jours = ["mardi", "mercredi", "jeudi", "vendredi", "samedi"] as const;
-
-export type Jour = (typeof jours)[number];
-
-export type Encadrement = "cours" | "libre";
-
-export type Horaire = {
-    public: string;
-    jour: Jour;
-    debut: Heure;
-    fin: Heure;
-    encadrement: Encadrement;
-};
-
-export type Heure = `${number}:${number}`;
+import type {Horaire} from "@components/info/Horaires.astro";
 
 export const horaires_cours: Horaire[] = [
     {

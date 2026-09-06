@@ -1,16 +1,15 @@
 ---
-import Horaires from "@components/info/Horaires.astro";---
+import Horaires from "@components/info/Horaires.astro";
+---
 
 <section>
     <div class="card" id="club">
-    <h1>Les fous du volant</h1>
-    <h2>Badminton à Mauves-sur-Loire</h2>
+        <h1>Les fous du volant 🏸</h1>
+        <h2>badminton à mauves-sur-loire</h2>
     </div>
 
-    <section class="" id="horaires">
-        <h1>Horaires</h1>
-        <Horaires/>
-    </section>
+
+    <Horaires/>
 </section>
 
 <style>
@@ -18,12 +17,13 @@ import Horaires from "@components/info/Horaires.astro";---
         margin: 1rem;
         padding: 3rem;
     }
-    #horaires {
-        display: flex;
-        flex-direction: column;
-        gap:1em;
-    }
+
     h1 {
-        //font-size: 5em;
+        font-size: 2em;
     }
+    h2 {
+        font-weight: normal;
+    }
+
+
 </style>

@@ -1,4 +1,6 @@
-export const links = [
+import type {Contacts} from "@components/contact/ContactCard.astro";
+
+export const links : Contacts[] = [
     {
         href: "https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire",
         label: "Hello Asso",

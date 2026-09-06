@@ -1,13 +1,65 @@
 ---
 import Membres from "./Membres.astro";
+import {withBase} from "../../utils/paths.ts";
+import {bureau} from "@data/membres.ts";
+import MembreCard from "@components/info/Membre.astro";
+import type {InfoLink} from "@components/info/InfoCard.astro";
+import InfoCard from "@components/info/InfoCard.astro";
+
+const infos: InfoLink[] = [
+    {
+        logo: '🏟️',
+        nom: "La salle",
+        lien: '/salle',
+    },
+    {
+        logo: '📜',
+        nom: "L'histoire",
+        lien: '/histoire',
+    },
+    {
+        logo: '🦸‍',
+        nom: "Le bureau",
+        lien: '/membres',
+    },
+    {
+        logo: '🏸',
+        nom: "Les règles",
+        lien: '/rules',
+    },
+]
+
 ---
 
-<section class="members" aria-labelledby="members-title">
-    <h2 id="members-title">L’association</h2>
-    <Membres/>
-</section>
+<article class="">
+    <h2 id="members-title">Les fous du volant</h2>
+
+
+    <section class="cards">
+
+        {infos.map((info: InfoLink) => (
+                <InfoCard
+                        logo={info.logo}
+                        nom={info.nom}
+                        lien={info.lien}
+                />
+        ))}
+    </section>
+</article>
 
 <style>
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .cards {
+        flex-direction: row;
+    }
+
     td {
         padding: 0 5px;
     }

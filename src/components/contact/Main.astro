@@ -3,21 +3,21 @@ import ContactCard from "./ContactCard.astro";
 import {links} from "../../data/contacts.ts";
 ---
 
-<section>
-	<h1>
-		Contact
-	</h1>
-</section>
-<section class="cards">
-	{links.map((link) => (
-		<ContactCard
-			href={link.href}
-			label={link.label}
-			logo={link.logo}
-			description={link.description}
-		/>
-	))}
-</section>
+<article>
+        <!--<h1>-->
+        <!--    Contact-->
+        <!--</h1>-->
+    <section class="cards">
+        {links.map((link) => (
+                <ContactCard
+                        href={link.href}
+                        label={link.label}
+                        logo={link.logo}
+                        description={link.description}
+                />
+        ))}
+    </section>
+</article>
 
 <style>
 </style>

@@ -1,0 +1,32 @@
+---
+import {withBase} from "../../utils/paths.ts";
+
+export interface InfoLink {
+    logo: string;
+    nom: string;
+    lien: string;
+}
+
+const {logo, nom, lien} = Astro.props;
+---
+<a href={withBase(lien)}>
+    <div class="card">
+        <h3>
+            {logo}
+        </h3>
+        {nom}
+    </div>
+</a>
+
+<style>
+    .card {
+        min-height: 150px;
+        min-width: 150px;
+        border: 1px solid var(--color-border);
+    }
+
+    h3 {
+        font-size: 3em;
+    }
+
+</style>

@@ -1,0 +1,170 @@
+---
+import Main from "../components/info/Main.astro";
+import Layout from "../layouts/Layout.astro";
+import Membres from "@components/info/Membres.astro";
+import InfoBack from "@components/info/InfoBack.astro";
+---
+
+<Layout>
+    <article>
+        <InfoBack />
+
+        <h1>🏸 Les règles</h1>
+        <section class="card">
+            <a href="https://www.ffbad.org/lafederation-textes-officiels-le-guide-du-badminton">Version complète téléchargeable ICI</a>
+        </section>
+        <section>
+            <h2>Les matches</h2>
+            <ul>
+                <li>Un match se joue au meilleur de trois sets en 21 points: le camp qui ,le premier, remporte 2 sets, gagne le match.
+                </li>
+                <li>Le camp gagnant un échange ajoute un point à son score.</li>
+                <li>A 20 égalité, le set est prolongé: c'est le camp qui mène avec 2 points d'écart qui remporte le set.
+                </li>
+                <li>A 29 égalité, le premier camp marquant le 30ème point gagne le set.</li>
+                <li>Le camp gagnant un set sert en premier dans le set suivant.</li>
+            </ul>
+            <p>Cela siginifie que chaque point est gagnant. Il n'y a plus à reprendre le service et à le confirmer pour
+                marquer un point. Un volant perdu implique donc un point pour l'adversaire. Chaque fois que le volant
+                touchera le sol, il y aura un point de marqué par l'un ou l'autre camp.</p>
+        </section>
+        <section>
+            <h2>Commencer un match</h2>
+            <p>Tirer au sort avec une pièce ou un volant. Le vainqueur a le choix de servir ou recevoir en premier et
+                également le choix du terrain.</p>
+            <h3>Positions sur le court au début d'un set</h3>
+            <p>Le serveur se tient à l'intérieur de la zone de service droite (faisant face au filet). Le receveur se
+                situe dans la zone de service droite (faisant face au filet) de l'autre côté du filet.</p>
+            <p>Les partenaires peuvent se placer où ils le désirent sur leur demi-terrain à condition de ne pas gêner le
+                champ de vision du serveur ou du receveur adverse.</p>
+        </section>
+        <section>
+            <h2>Positions au service</h2>
+            <h3>Simples</h3>
+            <ul>
+                <li>Au début du set et chaque fois que le score est pair, le serveur sert à droite. Si le score est
+                    impair, il sert à gauche.
+                </li>
+                <li>Si le serveur gagne l’échange il marque le point et sert dans la zone alternative. Si le receveur
+                    gagne l’échange, il marque un point et prend le service.
+                </li>
+                <li>Si le score du serveur est pair (0, 2, 4, ...), le serveur se tient sur la partie droite. Si le
+                    score du serveur est impair (1, 3, 5, ...), le serveur se tient sur la partie gauche.
+                </li>
+            </ul>
+            <h3>Doubles</h3>
+            <p>Il n’y a qu’un seul service (télécharger une notice en pdf ). Le service passe successivement d’un joueur
+                à l’autre suivant le schéma joint.</p>
+            <ul>
+                <li>Au début du set et quand le score est pair, le serveur sert depuis la zone de droite. Quand le score
+                    est impair il sert depuis la zone de gauche.
+                </li>
+                <li>Lorsque le camp du serveur gagne l’échange, celui-ci marque un point et le même serveur sert depuis
+                    l’autre zone de service.
+                </li>
+                <li>Si c’est le camp du receveur qui gagne l’échange, c’est lui qui marque un point. Le camp du receveur
+                    devient serveur.
+                </li>
+                <li>Le joueur du camp de réception qui a servi en dernier reste dans la zone de service dans laquelle il
+                    a servi la dernière fois. Et inversement pour le partenaire du receveur.
+                </li>
+                <li>Les joueurs ne changent pas de zones de service tant qu’ils ne marquent pas de point sur leur propre
+                    service.
+                </li>
+                <li>Quand le score d'une équipe est pair, le service a lieu du côté droit. Lorsque le score est impair,
+                    le service est effetué par le serveur côté gauche.
+                </li>
+                <li>Les joueurs peuvent se placer où ils veulent à l'intérieur de leurs demi-terrains respectifs et ne
+                    doivent pas gêner le serveur ni le receveur.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Commencer le jeu</h2>
+            <p>Le serveur sur la zone de service droite sert en direction du receveur dans le carré de service
+                diagonalement
+                opposé. Le receveur ne doit pas bouger jusqu'à ce que le serveur ait frappé le volant.</p>
+            <p>Le serveur doit:</p>
+            <ul>
+                <li>garder une partie de ses 2 pieds en position stationnaire au sol.</li>
+                <li>frapper la base du volant en premier.</li>
+                <li>frapper le volant sous sa taille.</li>
+                <li>frapper le volant avec le tamis de la raquette nettement plus bas que la main qui tient la raquette.
+                </li>
+                <li>avoir la raquette qui avance en permanence (pas d'arrêt ni de retour en arrière)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Durant le jeu</h2>
+            <p>Serveur ou receveur dans la mauvaise zone de service</p>
+            <ul>
+                <li>Rejouer le point ("let"), corriger le placement si la personne qui a fait l'erreur gagne l'échange
+                    et si l'erreur est découverte avant le prochain échange.
+                </li>
+                <li>Le score reste acquis si la personne qui a fait la faute perd l'échange, dans ce cas, les joueurs
+                    resteront en "mauvaise position" jusqu'à la fin du set. Si le service suivant a été joué, le score
+                    reste acquis et les joueurs resteront en "mauvaise position".
+                </li>
+            </ul>
+        </section>
+        <section>
+            <p>Jouer un "let" si</p>
+            <ul>
+                <li>le serveur ou le receveur est mal placé et gagne l'échange.</li>
+                <li>il se produit une interférence extérieure (un volant d'un autre court arrive sur le terrain).</li>
+                <li>le volant franchit le filet et y reste suspendu (sauf au service).</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Fautes</h2>
+            <ul>
+                <li>le volant tombe en dehors des limites du terrain (un volant dont la base tombe sur la ligne est
+                    bon).
+                </li>
+                <li>la raquette ou les vêtements d'un joueur touchent le filet alors que le volant est en jeu.</li>
+                <li>le joueur frappe le volant au dessus du filet dans le camp adverse (on peut toutefois, "suivre" le
+                    volant par-dessus le filet avec sa raquette au cours de l'exécution d'un coup).
+                </li>
+                <li>le volant est porté puis lancé lors de l'exécution d'un coup.</li>
+                <li>le volant est frappé deux fois par la même équipe (deux frappes dans le même geste sont autorisées).
+                </li>
+                <li>le volant touche le corps ou les vêtements d'un joueur, la toiture ou toute chose en dehors du
+                    terrain.
+                </li>
+                <li>le joueur change la vitesse du volant, a une conduite offensante, ou persiste après avoir reçu un
+                    avertissement (pénalité: perte du service ou un point à l'adversaire).
+                </li>
+                <li>le partenaire du receveur renvoie le service.</li>
+                <li>le serveur, en essayant de servir, manque le volant.</li>
+                <li>il touche le filet ou un poteau et commence à tomber vers la surface du terrain du côté du joueur
+                    qui a frappé le volant.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Volant en jeu</h2>
+            <p>Depuis le moment où le volant quitte la raquette du serveur jusqu'à ce que:</p>
+            <ul>
+                <li>il touche le sol.</li>
+                <li>il touche la toiture ou les murs latéraux.</li>
+                <li>il touche le corps ou les vêtements d'un joueur.</li>
+                <li>il touche le filet ou un poteau et commence à tomber vers la surface du terrain du côté du joueur
+                    qui a
+                    frappé le volant.
+                </li>
+            </ul>
+            <p>Note: un volant qui touche le filet lors du service mais continue sa trajectoire par dessus est bon sous
+                réserve qu'il arrive dans la zone de service.</p>
+        </section>
+    </article>
+</Layout>
+
+<style>
+    article {
+        gap: 1em;
+    }
+    article, section {
+        justify-content: start;
+        align-items: start;
+    }
+</style>

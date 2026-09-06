@@ -1,11 +1,21 @@
 ---
 import MembreCard from "@components/info/Membre.astro";
 import {membres, bureau} from "@data/membres.ts";
-import type {Membre} from "@data/membres.ts";
+import InfoBack from "@components/info/InfoBack.astro";
+
+export interface Membre {
+    initiales: string;
+    nom: string;
+    role?: string;
+}
+
 ---
 <article class="members-card">
     <section class="members-section">
-    <h3>Le bureau</h3>
+
+        <InfoBack />
+    <h1>🦸‍ Le bureau</h1>
+
     <div class="cards">
         {bureau.map((personne: Membre) => (
                 <MembreCard

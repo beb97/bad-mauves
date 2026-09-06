@@ -1,10 +1,4 @@
-import type {Horaire} from "@data/horaires.ts";
-
-export interface Membre {
-    initiales: string;
-    nom: string;
-    role?: string;
-}
+import type {Membre} from "@components/info/Membres.astro";
 
 export const bureau: Membre[] = [
     {

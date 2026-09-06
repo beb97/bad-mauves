@@ -1,0 +1,20 @@
+---
+import Main from "../components/info/Main.astro";
+import Layout from "../layouts/Layout.astro";
+import Membres from "@components/info/Membres.astro";
+import {withBase} from "../utils/paths.ts";
+import InfoBack from "@components/info/InfoBack.astro";
+---
+
+<Layout>
+    <article class="card">
+        <InfoBack />
+        <h1>🏟️ La salle</h1>
+        <section>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2706.072811188299!2d-1.3925225232102656!3d47.293376709554224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805fde424ba0591%3A0xf1ddcc8ba3003bd5!2sComplexe%20Sportif%20Le%20Pr%C3%A9%20aux%20Oies!5e0!3m2!1sfr!2sfr!4v1788719316857!5m2!1sfr!2sfr"
+                    width="300" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </section>
+    </article>
+</Layout>

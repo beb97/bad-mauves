@@ -1,5 +1,5 @@
 ---
-interface Props {
+export interface Contacts {
 	href: string;
 	logo: string;
 	label: string;
@@ -8,12 +8,12 @@ interface Props {
 
 const { href, logo, label, description } = Astro.props;
 
-const images = import.meta.glob("../../assets/*", {
+const images = import.meta.glob("../../assets/img/*", {
 	eager: true,
 	import: "default",
 });
 
-const image = images[`../../assets/${logo}`] as ImageMetadata | undefined;
+const image = images[`../../assets/img/${logo}`] as ImageMetadata | undefined;
 
 ---
 
@@ -33,6 +33,7 @@ const image = images[`../../assets/${logo}`] as ImageMetadata | undefined;
 		width: 200px;
 		min-height: 120px;
 		text-decoration: none;
+		border: 1px solid var(--color-border);
 	}
 
 
