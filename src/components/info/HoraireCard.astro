@@ -22,11 +22,9 @@ const {
   </div>
 
   <div class="horaire-card__content">
-    <p class="horaire-card__public">
-      {publicConcerne}
-    </p>
-
-    <div class="horaire-card__time">
+      {publicConcerne && <div>
+        {publicConcerne}
+      </div>}
       <div>
         {debut}
       </div>
@@ -35,10 +33,6 @@ const {
       </div>
     </div>
 
-    <!--<p class="horaire-card__type">-->
-    <!--  {encadrement}-->
-    <!--</p>-->
-  </div>
 </article>
 
 <style>
@@ -57,8 +51,14 @@ const {
 
   }
 
-  .horaire-card__time {
+  .horaire-card__content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding: 0.5em;
+    gap: 0.5rem;
+  }
+
+  .horaire-card__time > div {
+    //padding: 0.5em;
   }
 </style>
