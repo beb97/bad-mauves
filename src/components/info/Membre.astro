@@ -8,8 +8,8 @@ interface Props {
 const { initiales, nom, role } = Astro.props;
 ---
 
-<article class="member-card">
-    <div class="member-card__initials">
+<article class="card member-card">
+    <div class="card__titre">
         {initiales}
     </div>
 
@@ -30,21 +30,6 @@ const { initiales, nom, role } = Astro.props;
     .member-card {
         width: 220px;
         min-height: 160px;
-        padding: 1rem;
-        border-radius: 1.25rem;
-        background: linear-gradient(135deg, var(--color-active), transparent);
-        color: var(--color-text);
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-
-        text-align: center;
-        transition:
-                transform 0.2s ease,
-                background 0.2s ease;
     }
 
     .member-card:hover {
@@ -53,19 +38,7 @@ const { initiales, nom, role } = Astro.props;
     }
 
     .member-card__initials {
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        background: var(--color-text);
-        color: var(--color-background);
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        font-size: 1.8rem;
-        font-weight: 800;
-        letter-spacing: 0.05em;
     }
 
     .member-card__name {

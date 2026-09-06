@@ -14,24 +14,7 @@ export type Horaire = {
 
 export type Heure = `${number}:${number}`;
 
-export const heures: Heure[] = [
-    "10:00",
-    "11:00",
-    "12:00",
-    "13:00",
-    "14:00",
-    "15:00",
-    "16:00",
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-    "23:00",
-];
-
-export const horairesCours: Horaire[] = [
+export const horaires_cours: Horaire[] = [
     {
         public: "Enfant",
         jour: "mardi",
@@ -46,16 +29,16 @@ export const horairesCours: Horaire[] = [
         fin: "20:30",
         encadrement: "cours",
     },
-    {
-        public: "Adulte",
-        jour: "mardi",
-        debut: "20:30",
-        fin: "21:30",
-        encadrement: "cours",
-    },
+    // {
+    //     public: "Adulte",
+    //     jour: "mardi",
+    //     debut: "20:30",
+    //     fin: "21:30",
+    //     encadrement: "cours",
+    // },
 ];
 
-export const horairesLibre: Horaire[] = [
+export const horaires_libre: Horaire[] = [
     {
         public: "Adulte",
         jour: "mardi",

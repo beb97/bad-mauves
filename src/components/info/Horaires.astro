@@ -1,74 +1,28 @@
 ---
 import HoraireCard from "@components/info/HoraireCard.astro";
-const horaires_cours = [
-{
-    public: "Enfant",
-    jour: "mardi",
-    debut: "18h30",
-    fin: "19h30",
-    encadrement: "Cours",
-    },
-{
-    public: "Ado/Adulte",
-    jour: "mardi",
-    debut: "19h30",
-    fin: "20h30",
-    encadrement: "Cours",
-    },
-{
-    public: "Adulte",
-    jour: "mardi",
-    debut: "20h30",
-    fin: "21h30",
-    encadrement: "Cours",
-    }
-];
-
-const horaires_libre = [
-{
-    public: "Adulte",
-    jour: "mardi",
-    debut: "20h30",
-    fin: "22h30",
-    encadrement: "Libre",
-    },
-{
-    public: "Adultes",
-    jour: "jeudi",
-    debut: "20h30",
-    fin: "22h30",
-    encadrement: "Libre",
-    },
-{
-    public: "Adultes",
-    jour: "samedi",
-    debut: "10h45",
-    fin: "12h45",
-    encadrement: "Libre",
-    },
-];
-
+import { horaires_cours } from "@data/horaires";
+import { horaires_libre } from "@data/horaires";
 ---
-<section class="horaires-section">
-  <h2>Jeu libre</h2>
+<section class="card horaires-section">
+  <h2>Jeu libre adulte</h2>
 
-  <div class="horaires-list">
+  <div class="cards">
     {horaires_libre.map((horaire) => (
         <HoraireCard
-            public={horaire.public}
             jour={horaire.jour}
             debut={horaire.debut}
             fin={horaire.fin}
-            encadrement={horaire.encadrement}
         />
+      // public={horaire.public}
+        // encadrement={horaire.encadrement}
     ))}
   </div>
 </section>
 
-<section class="horaires-section">
+<section class="card horaires-section">
   <h2>Cours encadrés</h2>
 
-  <div class="horaires-list">
+  <div class="cards">
     {horaires_cours.map((horaire) => (
         <HoraireCard
             public={horaire.public}
@@ -80,3 +34,12 @@ const horaires_libre = [
     ))}
   </div>
 </section>
+
+<style>
+  .horaires-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+</style>

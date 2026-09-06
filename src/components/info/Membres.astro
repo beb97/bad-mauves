@@ -1,62 +1,33 @@
 ---
-import Membre from "@components/info/Membre.astro";
-const bureau = [
-    {
-        initiales: "FR",
-        nom: "Franck Robinet",
-        role: "Président",
-    },
-    {
-        initiales: "KL",
-        nom: "Katia Lauzanne",
-        role: "Trésorière",
-    },
-    {
-        initiales: "JPL",
-        nom: "Jean-Philippe Le Calvez",
-        role: "Trésorier adjoint",
-    },
-    {
-        initiales: "FG",
-        nom: "Fanny Graffard",
-        role: "Secrétaire",
-    },
-];
-
-const membres = [
-    "Olivier Ploteau",
-    "Maxime Caiveau",
-    "Chloé Boucault",
-];
+import MembreCard from "@components/info/Membre.astro";
+import {membres, bureau} from "@data/membres.ts";
+import type {Membre} from "@data/membres.ts";
 ---
-<div class="members-grid">
-    <article class="members-card">
-        <section class="members-section">
-        <h3>Le bureau</h3>
+<article class="members-card">
+    <section class="members-section">
+    <h3>Le bureau</h3>
+    <div class="cards">
+        {bureau.map((personne: Membre) => (
+                <MembreCard
+                        initiales={personne.initiales}
+                        nom={personne.nom}
+                        role={personne.role}
+                />
+        ))}
+    </div>
 
-            <div class="member-list">
-                {bureau.map((personne) => (
-                        <Membre
-                                initiales={personne.initiales}
-                                nom={personne.nom}
-                                role={personne.role}
-                        />
-                ))}
-            </div>
-        </section>
-    </article>
-
-    <!--<article class="members-card">-->
-    <!--    <h3>Les membres</h3>-->
-    <!--    <ul class="member-list simple">-->
-    <!--        {membres.map((membre) => (-->
-    <!--                <li>-->
-    <!--                    <span class="member-name">{membre}</span>-->
-    <!--                </li>-->
-    <!--        ))}-->
-    <!--    </ul>-->
-    <!--</article>-->
-</div>
+        <h3>Les membres</h3>
+        <div class="cards">
+            {membres.map((personne: Membre) => (
+                    <MembreCard
+                            initiales={personne.initiales}
+                            nom={personne.nom}
+                            role={personne.role}
+                    />
+            ))}
+        </div>
+    </section>
+</article>
 
 <style>
     ul {

@@ -17,7 +17,7 @@ const image = images[`../../assets/${logo}`] as ImageMetadata | undefined;
 
 ---
 
-<a class="contact-card" href={href}>
+<a class="card contact-card" href={href}>
 
 	<span class="contact-card__label">{label}</span>
 	{image && (
@@ -32,31 +32,9 @@ const image = images[`../../assets/${logo}`] as ImageMetadata | undefined;
 	.contact-card {
 		width: 200px;
 		min-height: 120px;
-		padding: 0.5rem;
-		border-radius: 1.25rem;
-		border: 2px solid transparent;
-		background: linear-gradient(135deg, var(--color-active), transparent);
-		color: var(--color-text);
 		text-decoration: none;
-
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 0.5rem;
-
-		text-align: center;
-		transition:
-			transform 0.2s ease,
-			border-color 0.2s ease,
-			background 0.2s ease;
 	}
 
-	.contact-card:hover {
-		transform: translateY(-4px);
-		border-color: var(--color-active);
-		background: var(--color-active);
-	}
 
 	.contact-card__logo {
 		width: 48px;
