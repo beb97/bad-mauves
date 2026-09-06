@@ -22,13 +22,18 @@ const {
   </div>
 
   <div class="horaire-card__content">
-    <h4 class="horaire-card__public">
+    <p class="horaire-card__public">
       {publicConcerne}
-    </h4>
-
-    <p class="horaire-card__time">
-      {debut} - {fin}
     </p>
+
+    <div class="horaire-card__time">
+      <div>
+        {debut}
+      </div>
+      <div>
+        {fin}
+      </div>
+    </div>
 
     <!--<p class="horaire-card__type">-->
     <!--  {encadrement}-->
@@ -39,11 +44,21 @@ const {
 <style>
   .horaire-card {
     width: 220px;
-    min-height: 100px;
+    min-height: 80px;
     margin: 0.25rem 0 0;
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+    border-radius: 20px;
   }
 
   .card__titre {
     padding: 0 1em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+  }
+
+  .horaire-card__time {
+    display: flex;
+    flex-direction: row;
   }
 </style>
