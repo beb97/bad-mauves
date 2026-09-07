@@ -1,29 +1,34 @@
 ---
 import Horaires from "@components/info/Horaires.astro";
+import {withBase} from "../../utils/paths.ts";
 ---
 
-<section>
-    <div class="card" id="club">
-        <h1>Les fous du volant 🏸</h1>
-        <h2>badminton à mauves-sur-loire</h2>
+<article>
+    <section class="card" id="club">
+        <img src="fous_white.png" alt="Les fous du volant"/>
+    </section>
+</article>
+
+<article>
+    <div class="card">
+        <a href={withBase("acces")}> Conditions d'accès</a>
     </div>
+</article>
 
-
-    <Horaires/>
-</section>
+<Horaires/>
 
 <style>
     #club {
-        margin: 1rem;
-        padding: 3rem;
+        padding: 3rem 1em;
+        max-width: clamp(300px, 500px, 100vw);
     }
-
+    #club img {
+        width: 100%;
+    }
     h1 {
         font-size: 2em;
     }
     h2 {
         font-weight: normal;
     }
-
-
 </style>

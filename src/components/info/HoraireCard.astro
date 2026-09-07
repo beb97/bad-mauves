@@ -1,63 +1,59 @@
 ---
 interface Props {
-  public?: string;
-  jour: string;
-  debut: string;
-  fin: string;
-  encadrement?: string;
+    public?: string;
+    jour: string;
+    debut: string;
+    fin: string;
+    encadrement?: string;
 }
 
 const {
-  public: publicConcerne,
-  jour,
-  debut,
-  fin,
-  encadrement,
+    public: publicConcerne,
+    jour,
+    debut,
+    fin,
+    encadrement,
 } = Astro.props;
 ---
 
-<article class="horaire-card">
-  <div class="card__titre horaire-card__day">
-    {jour}
-  </div>
-
-  <div class="horaire-card__content">
-      {publicConcerne && <div>
-        {publicConcerne}
-      </div>}
-      <div>
-        {debut}
-      </div>
-      <div>
-        {fin}
-      </div>
+<section class="horaire-card">
+    <div class="card__titre horaire-card__day">
+        {jour}
     </div>
 
-</article>
+    <div class="horaire-card__content">
+        {publicConcerne &&
+                <div>
+                    {publicConcerne}
+                </div>}
+        <div>
+            {debut}
+        </div>
+        <div>
+            {fin}
+        </div>
+    </div>
+
+</section>
 
 <style>
-  .horaire-card {
-    min-height: 80px;
-    margin: 0.25rem 0 0;
-    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-    border-radius: 20px;
-  }
+    .horaire-card {
+        margin: 0.25rem 0 0;
+        border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+        border-radius: 20px;
+    }
 
-  .card__titre {
-    padding: 0 1em;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    .card__titre {
+        padding: 0 1.5em;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 
-  }
-
-  .horaire-card__content {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5em;
-    gap: 0.5rem;
-  }
-
-  .horaire-card__time > div {
-    //padding: 0.5em;
-  }
+    .horaire-card__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0.5em;
+    }
 </style>

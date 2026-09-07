@@ -1,19 +1,20 @@
 ---
-import Membres from "./Membres.astro";
-import {withBase} from "../../utils/paths.ts";
-import {bureau} from "@data/membres.ts";
-import MembreCard from "@components/info/Membre.astro";
 import type {InfoLink} from "@components/info/InfoCard.astro";
 import InfoCard from "@components/info/InfoCard.astro";
 
 const infos: InfoLink[] = [
+    {
+        logo: '🏸',
+        nom: "L'accès",
+        lien: '/acces',
+    },
     {
         logo: '🏟️',
         nom: "La salle",
         lien: '/salle',
     },
     {
-        logo: '📜',
+        logo: '🌟',
         nom: "L'histoire",
         lien: '/histoire',
     },
@@ -23,7 +24,7 @@ const infos: InfoLink[] = [
         lien: '/membres',
     },
     {
-        logo: '🏸',
+        logo: '📜',
         nom: "Les règles",
         lien: '/rules',
     },

@@ -1,6 +1,25 @@
 ---
 import {withBase} from "../../utils/paths.ts";
 ---
-<section class="card">
-    <a href={withBase("infos")}> 🔙</a>
-</section>
+<!--<a class="bordered" id="back"> ↩ </a>-->
+<a class="bordered" id="back" href={withBase("infos")}> ↩ </a>
+
+<script>
+</script>
+
+<style>
+    #back {
+        position: fixed;
+        bottom: 0.2rem;
+        right: 0.2rem;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background-color: color-mix(in srgb, var(--color-background) 70%, transparent);
+    }
+</style>

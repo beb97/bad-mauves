@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import background from "@assets/img/bg2.jpg";
 import Font from "astro/components/Font.astro";
+import ClientRouter from "astro/components/ClientRouter.astro";
 ---
 <!doctype html>
 <html lang="en">
@@ -11,11 +12,16 @@ import Font from "astro/components/Font.astro";
         <meta name="viewport" content="width=device-width"/>
         <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`}/>
         <Font cssVariable="--font-raleway" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <!--<link href="https://fonts.googleapis.com/css2?family=Valley+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">-->
+        <!--<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">-->
         <meta name="generator" content={Astro.generator}/>
+        <ClientRouter />
         <title>Les fous du volant</title>
     </head>
     <body>
-        <!--<slot />-->
         <img id="background" src={background.src} alt="" fetchpriority="high"/>
         <Header/>
         <main id="container">
@@ -44,9 +50,10 @@ import Font from "astro/components/Font.astro";
         margin: 0;
         width: 100%;
         min-height: 100%;
-        font-size: 22px;
+        font-size: 26px;
         cursor: url("cursor.svg") 0 0, auto;
-        font-family: var(--font-raleway);
+        font-family: "Inter";
+        font-weight: 300;
         color: var(--color-text);
         background-color: color-mix(in srgb, var(--color-background) 80%, transparent);
     }
@@ -71,8 +78,6 @@ import Font from "astro/components/Font.astro";
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         max-width: 1000px;
         margin: 0 auto;
     }
@@ -84,10 +89,7 @@ import Font from "astro/components/Font.astro";
         justify-content: center;
         align-items: center;
         gap: 1em;
-    }
-
-    #spacer {
-        flex: 1;
+        margin-bottom: 1em;
     }
 
     a {
@@ -99,6 +101,14 @@ import Font from "astro/components/Font.astro";
     }
 
     h2, h3 {
+    }
+
+    .bordered {
+        border: 1px solid var(--color-border);
+    }
+
+    .link {
+        text-decoration: underline;
     }
 
     #background {
@@ -140,6 +150,7 @@ import Font from "astro/components/Font.astro";
         align-items: center;
         justify-content: center;
         gap: 0.75rem;
+        box-shadow: 1px 1px 2px 1px black;
 
         text-align: center;
         transition:

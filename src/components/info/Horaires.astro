@@ -21,9 +21,9 @@ export type Heure = `${number}:${number}`;
 ---
 
 <article id="horaires">
-    <h2>📅Horaires</h2>
     <section class="card horaires-section">
         <h3>Jeu libre adulte</h3>
+
         <div class="cards">
             {horaires_libre.map((horaire) => (
                     <HoraireCard
@@ -31,9 +31,6 @@ export type Heure = `${number}:${number}`;
                             debut={horaire.debut}
                             fin={horaire.fin}
                     />
-                // public={horaire.public}
-        // encadrement={horaire.encadrement}
-
             ))}
         </div>
     </section>
@@ -61,13 +58,11 @@ export type Heure = `${number}:${number}`;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1em;
     }
 
     .horaires-list {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 1em;
     }
 </style>

@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import InfoBack from "@components/info/InfoBack.astro";
+import Horaires from "@components/info/Horaires.astro";
+---
+
+<Layout>
+	<article>
+		<InfoBack />
+		<h1>🏸 L'accès</h1>
+
+		<section class="card">
+			<div>L'accès à la salle est limitée aux adhérents</div>
+			<div>Le montant de l'adhésion est de : </div>
+			<div>65€ par an en jeu libre</div>
+			<div>85€ par an en cours encadré</div>
+			<div>L'adhérent s'inscrit sur un des trois créneaux disponible</div>
+		</section>
+
+		<a class="card" href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> ➡️ Inscription sur Hello Asso</a>
+
+		<Horaires></Horaires>
+	</article>
+</Layout>
+
+<style>
+
+</style>
