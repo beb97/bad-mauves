@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import InfoBack from "@components/info/InfoBack.astro";
+import {withBase} from "../utils/paths.ts";
 ---
 
 <Layout>
@@ -16,6 +17,11 @@ import InfoBack from "@components/info/InfoBack.astro";
                 seconder dans cette aventure.
                 Et le 9 septembre 2004, naquit officiellement l'association "Les Fous du Volant".
             </p>
+        </section>
+        <section class="card" id="club">
+            <img src={withBase("/fous_white.png")} alt="Les fous du volant"/>
+        </section>
+        <section class="card">
             <p>
                 La première saison ouvre ses portes avec 42 joueurs .Actuellement, nous comptons plus de 110 adhérents
                 répartis sur 5 créneaux de jeu

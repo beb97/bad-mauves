@@ -17,6 +17,7 @@ import ClientRouter from "astro/components/ClientRouter.astro";
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <!--<link href="https://fonts.googleapis.com/css2?family=Valley+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">-->
         <!--<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">-->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
         <meta name="generator" content={Astro.generator}/>
         <ClientRouter />
         <title>Les fous du volant</title>
@@ -109,6 +110,17 @@ import ClientRouter from "astro/components/ClientRouter.astro";
 
     .link {
         text-decoration: underline;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    p {
+        font-size: 0.8rem;
     }
 
     #background {

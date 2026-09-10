@@ -1,6 +1,7 @@
 ---
 import type {InfoLink} from "@components/info/InfoCard.astro";
 import InfoCard from "@components/info/InfoCard.astro";
+import {withBase} from "../../utils/paths.ts";
 
 const infos: InfoLink[] = [
     {
@@ -33,8 +34,11 @@ const infos: InfoLink[] = [
 ---
 
 <article class="">
-    <h2 id="members-title">Les fous du volant</h2>
+    <!--<h2 id="members-title">Les fous du volant</h2>-->
 
+    <section class="card" id="club">
+        <img src={withBase("/logo_club_1.png")} alt="Les fous du volant"/>
+    </section>
 
     <section class="cards">
 
