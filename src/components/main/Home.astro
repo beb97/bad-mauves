@@ -5,13 +5,14 @@ import {withBase} from "../../utils/paths.ts";
 
 <article>
     <section class="card" id="club">
-        <img src={withBase("/logo_club_1.png")} alt="Les fous du volant"/>
+        <img src={withBase("/logo/logo_club_1.svg")} alt="Les fous du volant"/>
+
     </section>
 </article>
 
 <article>
-    <div class="card">
-        <a href={withBase("acces")}> Conditions d'accès</a>
+    <div class="card button">
+        <a href={withBase("/infos/acces")}> Conditions d'accès</a>
     </div>
 </article>
 
@@ -19,8 +20,8 @@ import {withBase} from "../../utils/paths.ts";
 
 <style>
     #club {
-        padding: 3rem 1em;
-        max-width: clamp(300px, 500px, 100vw);
+        width: 90vw;
+        max-width: 600px;
     }
     #club img {
         width: 100%;
