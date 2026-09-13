@@ -1,4 +1,5 @@
 ---
+import {withBase} from "@utils/paths.ts";
 export interface Contacts {
     href: string;
     logo: string;
@@ -7,19 +8,13 @@ export interface Contacts {
 
 const {href, logo, description} = Astro.props;
 
-const images = import.meta.glob("../../assets/img/*", {
-    eager: true,
-    import: "default",
-});
-
-const image = images[`../../assets/img/${logo}`] as ImageMetadata | undefined;
 ---
 
 <a href={href}>
     <div class="card bordered h">
         <div class="card__titre">
-            {image && (
-                    <img class="card__logo" src={image.src} alt={description}/>
+            {href && (
+                    <img class="card__logo" src={withBase(logo)} alt={description}/>
             )}
         </div>
         <div class="card__content"><h3 class="">{description}</h3></div>

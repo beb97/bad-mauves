@@ -22,11 +22,11 @@ const {logo, nom, lien} = Astro.props;
             ></InfoCard>
         </div>
 
-        <section class="card">
-            <div class="card__content">
-                <p>accès est limitée aux adhérents</p>
-            </div>
-        </section>
+        <!--<section class="card">-->
+        <!--    <div class="card__content">-->
+        <!--        <p>accès est limitée aux adhérents</p>-->
+        <!--    </div>-->
+        <!--</section>-->
 
         <section class="card">
             <div class="card__content">
@@ -34,7 +34,7 @@ const {logo, nom, lien} = Astro.props;
                 <table>
                     <tr>
                         <th>public</th>
-                        <th>cout annuel</th>
+                        <th>coût annuel</th>
                     </tr>
                     <tr>
                         <td>jeu adulte</td>
@@ -49,24 +49,39 @@ const {logo, nom, lien} = Astro.props;
         </section>
 
 
-        <a class="card button bordered"
-           href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> ➡️
-            Inscription sur Hello Asso</a>
+        <a class="cards" href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> <div>
+
+            <div class="card h button bordered">
+
+            <img src={withBase("/contacts/logo_asso.png")} alt="helloasso"/>
+            <span> inscription sur hello asso </span>
+            </div>
+        </div>
+        </a>
 
         <p>(sous réserve de disponibilité)</p>
     </article>
 </Layout>
 
 <style>
+    a img {
+        width: 35px;
+        height: 35px;
+        object-fit: contain;
+        margin-right: 0.5rem;
+    }
+
     table {
         border-collapse: separate;
         border-spacing: 0;
         border-radius: 10px;
     }
+
     th {
         background-color: var(--color-border);
         color: var(--color-background);
     }
+
     td, th {
         margin: 1rem;
         padding: 1rem;
@@ -76,6 +91,7 @@ const {logo, nom, lien} = Astro.props;
     table tr:first-child th:first-child {
         border-top-left-radius: 10px;
     }
+
     table tr:first-child th:last-child {
         border-top-right-radius: 10px;
     }

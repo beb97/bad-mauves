@@ -1,8 +1,9 @@
 ---
 import {withBase} from "@utils/paths.ts";
 ---
+<!--<div id="back">-->
 <a class="bordered" id="back" data-back-button href={withBase("/infos")}> ↩ </a>
-
+<!--</div>-->
 <script>
     import {goBack} from "@utils/paths.ts";
 
@@ -16,16 +17,18 @@ import {withBase} from "@utils/paths.ts";
 <style>
     #back {
         position: fixed;
-        bottom: 0.2rem;
-        right: 0.2rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
         border-radius: 50%;
-        width: 20px;
-        height: 20px;
+        width: 60px;
+        height: 60px;
         padding: 1em;
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
+        text-align: center;
         background-color: color-mix(in srgb, var(--color-background) 70%, transparent);
     }
+
 </style>
