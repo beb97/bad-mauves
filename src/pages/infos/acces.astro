@@ -23,15 +23,9 @@ const {logo, nom, lien} = Astro.props;
             ></InfoCard>
         </div>
 
-        <!--<section class="card">-->
-        <!--    <div class="card__content">-->
-        <!--        <p>accès est limitée aux adhérents</p>-->
-        <!--    </div>-->
-        <!--</section>-->
 
         <section class="card">
             <div class="card__content">
-                <!--<p>adhésion annuelle: </p>-->
                 <table>
                     <tr>
                         <th>public</th>
@@ -50,9 +44,9 @@ const {logo, nom, lien} = Astro.props;
         </section>
 
 
-        <a class="cards" href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> <div>
+        <a class="card h button bordered" href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> <div>
 
-            <div class="card h button bordered">
+            <div class="card__content h">
 
             <Image src={logoAsso} alt="helloasso"/>
             <span> inscription sur hello asso </span>

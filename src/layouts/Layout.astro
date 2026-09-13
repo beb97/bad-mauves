@@ -159,6 +159,7 @@ import Image from "astro/components/Image.astro";
     .h {
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 
     .v {
@@ -178,10 +179,10 @@ import Image from "astro/components/Image.astro";
     .button {
         background: linear-gradient(135deg, var(--color-active), transparent);
         box-shadow: 1px 1px 2px 1px black;
-        padding: 0.25rem;
+        //padding: 0.25rem;
     }
 
-    .card:hover {
+    .button:hover {
         transform: translateY(-4px);
         background: var(--color-active);
     }
