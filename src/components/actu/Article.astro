@@ -1,0 +1,36 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    url: string;
+    date: string;
+}
+
+const { title, description, url, date } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString("fr-FR", {
+    day: "2-digit",
+    month: "short",
+});
+---
+
+<section class="card h bordered">
+    <a class="card__titre" href={url}>
+        <time class="card__titre" datetime={date}>{formattedDate}</time>
+    </a>
+    <a class="card__content" href={url}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+    </a>
+</section>
+
+<style>
+    .card {
+        width: 90vw;
+        max-width: 400px;
+    }
+
+    .card__titre {
+        font-size: 0.8rem;
+    }
+</style>

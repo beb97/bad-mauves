@@ -10,6 +10,8 @@ export interface InfoLink {
 
 const {logo, nom, lien} = Astro.props;
 ---
+
+
 <a href={withBase(lien)}>
     <div class="card button bordered h">
         <div class="card__titre"><Material logo={logo}/></div>

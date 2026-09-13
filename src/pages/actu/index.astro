@@ -1,0 +1,27 @@
+---
+import {getCollection} from 'astro:content';
+import Article from "@components/actu/Article.astro";
+import Layout from '@layouts/Layout.astro';
+import {withBase} from "@utils/paths.ts";
+
+const articles = (await getCollection('actu', ({data}) => !data.draft))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Layout>
+    <article class="v">
+        <h1>actu</h1>
+            <div class="cards v">
+                {articles.map((article) => (
+                        <Article
+                                title={article.data.title}
+                                description={article.data.description}
+                                url={withBase(`/actu/${article.id}`)}
+                                date={article.data.date.toISOString()}
+                        />
+                ))}
+            </div>
+    </article>
+</Layout>
+
+<style>
+</style>

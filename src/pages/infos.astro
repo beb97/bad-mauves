@@ -6,9 +6,9 @@ import {infos} from "@data/infos.ts";
 
 ---
 <Layout>
-<article class="">
+<article>
 	<h2>infos du club</h2>
-	<section class="cards h">
+		<section class="cards h">
 
 		{infos.map((info: InfoLink) => (
 			<InfoCard
@@ -17,7 +17,7 @@ import {infos} from "@data/infos.ts";
 				lien={info.lien}
 			/>
 		))}
-	</section>
+		</section>
 </article>
 </Layout>
 

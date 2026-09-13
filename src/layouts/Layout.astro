@@ -4,6 +4,16 @@ import Footer from "../components/Footer.astro";
 import background from "@assets/img/bg2.webp";
 import Font from "astro/components/Font.astro";
 import Image from "astro/components/Image.astro";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "Les fous du volant",
+    description = "Club de badminton à Mauves-sur-Loire",
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -20,7 +30,8 @@ import Image from "astro/components/Image.astro";
     <!--<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <meta name="generator" content={Astro.generator}/>
-    <title>Les fous du volant</title>
+    <meta name="description" content={description}/>
+    <title>{title}</title>
 </head>
 <body>
 <Image id="background" src={background} alt="" fetchpriority="high"/>
@@ -87,7 +98,7 @@ import Image from "astro/components/Image.astro";
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 1em;
+        gap: 0.5em;
         margin-bottom: 1em;
     }
 
@@ -143,7 +154,7 @@ import Image from "astro/components/Image.astro";
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 1rem;
     }
 
     .card {
@@ -187,17 +198,17 @@ import Image from "astro/components/Image.astro";
     }
 
     .card__titre {
-        width: 100%;
         background: var(--color-text);
         color: var(--color-background);
         display: flex;
         justify-content: center;
-        flex: 1;
+        align-self: stretch;
+        padding: 0.4rem;
         flex-direction: column;
-        padding: 1rem;
     }
     .card__content {
         padding: 0.5em;
+        flex: 1;
     }
 
     @media screen and (max-width: 768px) {
