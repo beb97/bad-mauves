@@ -1,0 +1,20 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InfoBack from "@components/info/InfoBack.astro";
+import Horaires from "@components/info/Horaires.astro";
+import ButtonBack from "@components/info/ButtonBack.astro";
+import Material from "@utils/material.astro";
+---
+
+<Layout>
+    <article>
+        <InfoBack/>
+        <h1><ButtonBack/>Horaires <Material logo={"schedule"}/></h1>
+
+        <Horaires></Horaires>
+    </article>
+</Layout>
+
+<style>
+
+</style>

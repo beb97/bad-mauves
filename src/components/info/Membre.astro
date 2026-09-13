@@ -5,26 +5,23 @@ interface Props {
     role?: string;
 }
 
-const { initiales, nom, role } = Astro.props;
+const {initiales, nom, role} = Astro.props;
 ---
 
-<article class="card bordered">
+<section class="card bordered">
     <h2 class="card__titre">
         {initiales}
     </h2>
 
-    <div class="">
-        <h3 class="">
-            {nom}
-        </h3>
+    <div class="card__content">
+    <h3 class="">
+        {nom}
+    </h3>
 
-        {role && (
-                <p class="">
-                    {role}
-                </p>
-        )}
+    {role && (
+            <p class="">
+                {role}
+            </p>
+    )}
     </div>
-</article>
-
-<style>
-</style>
+</section>

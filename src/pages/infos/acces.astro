@@ -4,20 +4,21 @@ import InfoBack from "@components/info/InfoBack.astro";
 import Horaires from "@components/info/Horaires.astro";
 import ButtonBack from "@components/info/ButtonBack.astro";
 import Material from "@utils/material.astro";
+import {withBase} from "@utils/paths.ts";
 ---
 
 <Layout>
     <article>
         <InfoBack/>
-        <h1><ButtonBack/>L'accès <Material logo={"badminton"}/></h1>
+        <h1><ButtonBack/>accès <Material logo={"badminton"}/></h1>
         <!--🏸-->
 
 
         <section class="card">
             <div class="text">
-                <p>l'accès est limitée aux adhérents</p>
-                <p>l'adhésion est de : </p>
-                <p>65€ par an</p>
+                <p>accès est limitée aux adhérents</p>
+                <p>adhésion : 65€ par an</p>
+                <p></p>
                 <!--<p>L'adhérent s'inscrit sur un des trois créneaux disponibles</p>-->
 
             </div>
@@ -26,7 +27,9 @@ import Material from "@utils/material.astro";
         <a class="card button bordered" href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> ➡️
             Inscription sur Hello Asso</a>
 
-        <Horaires></Horaires>
+        <div class="card button bordered">
+            <a href={withBase("/infos/horaires")}>horaires</a>
+        </div>
     </article>
 </Layout>
 

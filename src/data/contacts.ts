@@ -19,11 +19,11 @@ export const links : Contacts[] = [
     {
         href: "https://www.scoreouest.fr/FR/",
         logo: "logo_old_site.png",
-        description: "site actuel",
+        description: "site",
     },
     {
         href: "https://salle.3douest.com/internaute.php?module=mauvessurloire",
         logo: "logo_ouest.png",
-        description: "dispos salle",
+        description: "salle",
     },
 ];

@@ -1,13 +1,12 @@
 ---
-import {withBase} from "../../utils/paths.ts";
+import {withBase} from "@utils/paths.ts";
 import Material from "@utils/material.astro";
 ---
-<!--<a class="bordered" id="back"> ↩ </a>-->
 <a href={withBase("/infos")}> <Material logo={"arrow_back"}/> </a>
 
 
 <style>
-    #back {
-
-    }
+   a {
+       opacity: 0.3;
+   }
 </style>
