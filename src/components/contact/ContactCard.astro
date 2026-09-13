@@ -1,20 +1,32 @@
 ---
 import {withBase} from "@utils/paths.ts";
+import Image from "astro/components/Image.astro";
 export interface Contacts {
     href: string;
     logo: string;
     description?: string;
 }
-
 const {href, logo, description} = Astro.props;
 
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/img/**/*", {
+    eager: true,
+});
+
+const imageModule = images[`/src/assets/img${logo}`];
+
+if (!imageModule) {
+    throw new Error(`"${logo}" does not exist in assets.`);
+}
+
+const image = imageModule.default;
 ---
 
 <a href={href}>
     <div class="card bordered h">
         <div class="card__titre">
             {href && (
-                    <img class="card__logo" src={withBase(logo)} alt={description}/>
+                    <Image src={image} class="card__logo" alt="Les fous du volant"></Image>
+                    // <Image src={image} alt="Les fous du volant" width={60} height={60}></Image>
             )}
         </div>
         <div class="card__content"><h3 class="">{description}</h3></div>

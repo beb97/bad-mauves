@@ -1,11 +1,12 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import InfoBack from "@components/info/InfoBack.astro";
-import Horaires from "@components/info/Horaires.astro";
-import ButtonBack from "@components/info/ButtonBack.astro";
-import Material from "@utils/material.astro";
+
+import logoAsso from "@assets/img/contacts/logo_asso.png";
 import {withBase} from "@utils/paths.ts";
 import InfoCard from "@components/info/InfoCard.astro";
+import Image from "astro/components/Image.astro";
+
 const {logo, nom, lien} = Astro.props;
 ---
 
@@ -53,7 +54,7 @@ const {logo, nom, lien} = Astro.props;
 
             <div class="card h button bordered">
 
-            <img src={withBase("/contacts/logo_asso.png")} alt="helloasso"/>
+            <Image src={logoAsso} alt="helloasso"/>
             <span> inscription sur hello asso </span>
             </div>
         </div>

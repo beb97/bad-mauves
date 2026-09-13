@@ -1,10 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import InfoBack from "@components/info/InfoBack.astro";
-import Material from "@utils/material.astro";
-import ButtonBack from "@components/info/ButtonBack.astro";
 import {withBase} from "@utils/paths.ts";
 import InfoCard from "@components/info/InfoCard.astro";
+
+import stade from '@assets/img/stade_1.png';
+import Image from "astro/components/Image.astro";
 ---
 
 <Layout>
@@ -23,9 +24,8 @@ import InfoCard from "@components/info/InfoCard.astro";
         <h2>Complexe Sportif</h2>
         <h3>Le Pré aux Oies</h3>
         <div class="card bordered">
-            <img src={withBase("/stade_1.png")} alt="La salle"/>
+            <Image src={stade} alt="La salle"/>
         </div>
-        <!--<img src={withBase("/logo/logo_club_1.svg")} alt="Les fous du volant"/>-->
         <p><a href="https://maps.app.goo.gl/QnPk2mVtkTA7wejPA" target="_blank" rel="noopener noreferrer">8 Av. de la Gare, 44470 Mauves-sur-Loire</a></p>
         <section id="gmap">
             <iframe

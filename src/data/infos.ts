@@ -16,11 +16,6 @@ export const infos : InfoLink[] = [
         lien: '/infos/salle',
     },
     {
-        logo: 'history',
-        nom: "histoire",
-        lien: '/infos/histoire',
-    },
-    {
         logo: 'diversity_4',
         nom: "bureau",
         lien: '/infos/membres',
@@ -29,5 +24,10 @@ export const infos : InfoLink[] = [
         logo: 'gavel',
         nom: "règles",
         lien: '/infos/rules',
+    },
+    {
+        logo: 'history',
+        nom: "histoire",
+        lien: '/infos/histoire',
     },
 ];

@@ -1,5 +1,7 @@
 ---
+import Image from "astro/components/Image.astro";
 import {withBase} from "../utils/paths.ts";
+import logo from '@assets/img/logo/logo_club_1.svg';
 const currentPath = Astro.url.pathname;
 
 
@@ -26,7 +28,7 @@ const isActive = (href: string) => {
            logo: true,
            "hidden": isHomePage,
        }}>
-        <img src={withBase("/logo/logo_club_1.png")} alt="Les fous du volant"/>
+        <Image src={logo} alt="Les fous du volant" width={90} height={90}/>
     </a>
     <nav>
         <ul>
@@ -86,8 +88,7 @@ const isActive = (href: string) => {
     }
 
     li:hover {
-        border: 2px solid red;
-        border-color: var(--color-active);
+        border: 2px solid var(--color-active);
         background: var(--color-active);
     }
 

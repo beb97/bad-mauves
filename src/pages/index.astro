@@ -2,14 +2,13 @@
 import Horaires from "@components/info/Horaires.astro";
 import {withBase} from "@utils/paths.ts";
 import Layout from "@layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import logo from '@assets/img/logo/logo_club_1.svg';
 ---
 
-
 <Layout>
-
-
     <article class="cards v" id="club">
-        <img src={withBase("/logo/logo_club_1.svg")} alt="Les fous du volant"/>
+        <Image src={logo} alt="Les fous du volant" width={600} height={400}></Image>
         <section>
             <h2 class="card">club de badminton</h2>
             <h3>mauves-sur-loire</h3>

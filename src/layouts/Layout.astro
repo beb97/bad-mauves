@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import background from "@assets/img/bg2.webp";
 import Font from "astro/components/Font.astro";
-import ClientRouter from "astro/components/ClientRouter.astro";
+import Image from "astro/components/Image.astro";
 ---
 <!doctype html>
 <html lang="en">
@@ -20,11 +20,10 @@ import ClientRouter from "astro/components/ClientRouter.astro";
     <!--<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <meta name="generator" content={Astro.generator}/>
-    <!--<ClientRouter/>-->
     <title>Les fous du volant</title>
 </head>
 <body>
-<img id="background" src={background.src} alt="" fetchpriority="high"/>
+<Image id="background" src={background} alt="" fetchpriority="high"/>
 <Header/>
 <main id="container">
     <slot/>
