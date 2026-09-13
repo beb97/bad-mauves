@@ -2,14 +2,14 @@ import type {Horaire} from "@components/info/Horaires.astro";
 
 export const horaires_cours: Horaire[] = [
     {
-        public: "Enfant",
+        public: "enfant",
         jour: "mardi",
         debut: "18:30",
         fin: "19:30",
         encadrement: "cours",
     },
     {
-        public: "Ado/Adulte",
+        public: "ado adulte",
         jour: "mardi",
         debut: "19:30",
         fin: "20:30",

@@ -25,9 +25,29 @@ const {logo, nom, lien} = Astro.props;
         <section class="card">
             <div class="card__content">
                 <p>accès est limitée aux adhérents</p>
-                <p>adhésion : 65€ par an</p>
             </div>
         </section>
+
+        <section class="card">
+            <div class="card__content">
+                <!--<p>adhésion annuelle: </p>-->
+                <table>
+                    <tr>
+                        <th>public</th>
+                        <th>cout annuel</th>
+                    </tr>
+                    <tr>
+                        <td>jeu adulte</td>
+                        <td>65€</td>
+                    </tr>
+                    <tr>
+                        <td>cours enfant</td>
+                        <td>85€</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
 
         <a class="card button bordered"
            href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> ➡️
@@ -38,5 +58,33 @@ const {logo, nom, lien} = Astro.props;
 </Layout>
 
 <style>
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 10px;
+    }
+    th {
+        background-color: var(--color-border);
+        color: var(--color-background);
+    }
+    td, th {
+        margin: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--color-border);
+    }
 
+    table tr:first-child th:first-child {
+        border-top-left-radius: 10px;
+    }
+    table tr:first-child th:last-child {
+        border-top-right-radius: 10px;
+    }
+
+    table tr:last-child td:first-child {
+        border-bottom-left-radius: 10px;
+    }
+
+    table tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+    }
 </style>
