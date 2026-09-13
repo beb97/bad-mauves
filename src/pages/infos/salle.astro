@@ -4,13 +4,22 @@ import InfoBack from "@components/info/InfoBack.astro";
 import Material from "@utils/material.astro";
 import ButtonBack from "@components/info/ButtonBack.astro";
 import {withBase} from "@utils/paths.ts";
+import InfoCard from "@components/info/InfoCard.astro";
 ---
 
 <Layout>
     <article class="">
         <InfoBack />
-        <!--<h1>🏟️ La salle</h1>-->
-        <h1><ButtonBack/> La salle <Material logo={"stadium"}/></h1>
+
+        <div class="cards">
+            <!--<ButtonBack/>-->
+            <InfoCard
+                    logo="stadium" ,
+                    nom="salle" ,
+                    lien="/infos"
+            ></InfoCard>
+        </div>
+
         <h2>Complexe Sportif</h2>
         <h3>Le Pré aux Oies</h3>
         <div class="card bordered">

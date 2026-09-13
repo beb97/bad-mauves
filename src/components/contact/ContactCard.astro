@@ -1,44 +1,47 @@
 ---
 export interface Contacts {
-	href: string;
-	logo: string;
-	description?: string;
+    href: string;
+    logo: string;
+    description?: string;
 }
 
-const { href, logo, description } = Astro.props;
+const {href, logo, description} = Astro.props;
 
 const images = import.meta.glob("../../assets/img/*", {
-	eager: true,
-	import: "default",
+    eager: true,
+    import: "default",
 });
 
 const image = images[`../../assets/img/${logo}`] as ImageMetadata | undefined;
-
 ---
 
 <a href={href}>
-	<div class="card bordered h">
-		<div class="card__titre"><img class="card__logo" src={image.src} alt={description} /></div>
-		<div class="card__content"> <h3 class="">{description}</h3></div>
-	</div>
+    <div class="card bordered h">
+        <div class="card__titre">
+            {image && (
+                    <img class="card__logo" src={image.src} alt={description}/>
+            )}
+        </div>
+        <div class="card__content"><h3 class="">{description}</h3></div>
+    </div>
 </a>
 
 <style>
-	.card {
-		width: 70vw;
-		max-width: 200px;
-		text-decoration: none;
-		border: 1px solid var(--color-border);
-	}
+    .card {
+        width: 70vw;
+        max-width: 200px;
+        text-decoration: none;
+        border: 1px solid var(--color-border);
+    }
 
-	.card__logo {
-		width: 25px;
-		height: 25px;
-		object-fit: contain;
-	}
+    .card__logo {
+        width: 35px;
+        height: 35px;
+        object-fit: contain;
+    }
 
-	.card__content {
-		width: 40vw;
-		max-width: 150px;
-	}
+    .card__content {
+        width: 40vw;
+        max-width: 150px;
+    }
 </style>

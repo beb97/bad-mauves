@@ -3,13 +3,20 @@ import Layout from "@layouts/Layout.astro";
 import InfoBack from "@components/info/InfoBack.astro";
 import Horaires from "@components/info/Horaires.astro";
 import ButtonBack from "@components/info/ButtonBack.astro";
-import Material from "@utils/material.astro";
+import InfoCard from "@components/info/InfoCard.astro";
 ---
 
 <Layout>
     <article>
         <InfoBack/>
-        <h1><ButtonBack/>Horaires <Material logo={"schedule"}/></h1>
+        <div class="cards">
+            <!--<ButtonBack/>-->
+            <InfoCard
+                    logo="schedule" ,
+                    nom="horaires" ,
+                    lien="/infos"
+            ></InfoCard>
+        </div>
 
         <Horaires></Horaires>
     </article>

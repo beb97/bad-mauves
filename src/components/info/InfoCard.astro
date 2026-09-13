@@ -5,7 +5,7 @@ import Material from "@utils/material.astro";
 export interface InfoLink {
     logo: string;
     nom: string;
-    lien: string;
+    lien: string|undefined;
 }
 
 const {logo, nom, lien} = Astro.props;

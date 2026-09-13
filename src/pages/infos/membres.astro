@@ -5,6 +5,7 @@ import InfoBack from "@components/info/InfoBack.astro";
 import Material from "@utils/material.astro";
 import ButtonBack from "@components/info/ButtonBack.astro";
 import Layout from "@layouts/Layout.astro";
+import InfoCard from "@components/info/InfoCard.astro";
 
 export interface Membre {
     initiales: string;
@@ -16,11 +17,13 @@ export interface Membre {
     <article class="members-card">
         <InfoBack/>
         <!--🦸‍-->
-        <h1>
-            <ButtonBack/>
-            Le bureau
-            <Material logo={"diversity_4"}/>
-        </h1>
+        <div class="cards">
+            <InfoCard
+                    logo="diversity_4" ,
+                    nom="bureau" ,
+                    lien="/infos"
+            ></InfoCard>
+        </div>
         <section class="members-section">
 
             <!--<Material logo={"diversity_4"}/>-->

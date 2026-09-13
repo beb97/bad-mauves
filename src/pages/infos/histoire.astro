@@ -4,13 +4,23 @@ import InfoBack from "@components/info/InfoBack.astro";
 import {withBase} from "@utils/paths.ts";
 import Material from "@utils/material.astro";
 import ButtonBack from "@components/info/ButtonBack.astro";
+import InfoCard from "@components/info/InfoCard.astro";
 ---
 
 <Layout>
     <article>
         <InfoBack/>
 
-        <h1><ButtonBack/> L'histoire <Material logo={"history"}/></h1>
+        <div class="cards">
+            <!--<ButtonBack/>-->
+            <InfoCard
+                    logo="history" ,
+                    nom="histoire" ,
+                    lien="/infos"
+            ></InfoCard>
+        </div>
+
+        <!--<h1><ButtonBack/> L'histoire <Material logo={"history"}/></h1>-->
 
         <section class="card">
             <p>

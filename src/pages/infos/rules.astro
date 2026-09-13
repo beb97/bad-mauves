@@ -3,13 +3,21 @@ import Layout from "@layouts/Layout.astro";
 import InfoBack from "@components/info/InfoBack.astro";
 import Material from "@utils/material.astro";
 import ButtonBack from "@components/info/ButtonBack.astro";
+import InfoCard from "@components/info/InfoCard.astro";
 ---
 
 <Layout>
     <article>
         <InfoBack />
 
-        <h1><ButtonBack/> Les règles <Material logo={"gavel"}/></h1>
+        <div class="cards">
+            <!--<ButtonBack/>-->
+            <InfoCard
+                    logo="gavel" ,
+                    nom="régles" ,
+                    lien="/infos"
+            ></InfoCard>
+        </div>
         <section class="card">
             <a href="https://www.ffbad.org/lafederation-textes-officiels-le-guide-du-badminton">Version complète téléchargeable ICI</a>
         </section>
