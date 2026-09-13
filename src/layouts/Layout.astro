@@ -24,7 +24,7 @@ import ClientRouter from "astro/components/ClientRouter.astro";
     <title>Les fous du volant</title>
 </head>
 <body>
-<img id="background" src={background.src} alt="" fetchpriority="high"/>
+<img id="background" src={background.src} fetchpriority="high"/>
 <Header/>
 <main id="container">
     <slot/>
@@ -116,7 +116,7 @@ import ClientRouter from "astro/components/ClientRouter.astro";
         font-weight: normal;
     }
 
-    img {
+    article > img {
         width: 95vw;
         max-width: 600px;
     }
@@ -130,10 +130,9 @@ import ClientRouter from "astro/components/ClientRouter.astro";
         width: 100vw;
         height: calc(100vh + 60px);
         z-index: -1;
-        filter: blur(20px);
+        filter: blur(10px);
         background-color: var(--color-background);
         object-fit: cover;
-        transform: translateX(-50%);
     }
 
     .link {

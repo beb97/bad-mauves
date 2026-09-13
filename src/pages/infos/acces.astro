@@ -10,16 +10,15 @@ import {withBase} from "@utils/paths.ts";
 <Layout>
     <article>
         <InfoBack/>
-        <h1><ButtonBack/>accès <Material logo={"badminton"}/></h1>
+        <h1><ButtonBack/>inscription <Material logo={"badminton"}/></h1>
         <!--🏸-->
 
 
         <section class="card">
-            <div class="text">
+            <div class="card__content">
                 <p>accès est limitée aux adhérents</p>
                 <p>adhésion : 65€ par an</p>
-                <p></p>
-                <!--<p>L'adhérent s'inscrit sur un des trois créneaux disponibles</p>-->
+
 
             </div>
         </section>
@@ -27,9 +26,7 @@ import {withBase} from "@utils/paths.ts";
         <a class="card button bordered" href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> ➡️
             Inscription sur Hello Asso</a>
 
-        <div class="card button bordered">
-            <a href={withBase("/infos/horaires")}>horaires</a>
-        </div>
+        <p>(sous réserve de disponibilité)</p>
     </article>
 </Layout>
 
