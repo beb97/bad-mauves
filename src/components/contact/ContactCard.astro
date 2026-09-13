@@ -2,11 +2,10 @@
 export interface Contacts {
 	href: string;
 	logo: string;
-	label: string;
 	description?: string;
 }
 
-const { href, logo, label, description } = Astro.props;
+const { href, logo, description } = Astro.props;
 
 const images = import.meta.glob("../../assets/img/*", {
 	eager: true,
@@ -17,38 +16,29 @@ const image = images[`../../assets/img/${logo}`] as ImageMetadata | undefined;
 
 ---
 
-<a class="card contact-card button" href={href}>
+<a class="card button" href={href}>
 
-	<span class="contact-card__label">{label}</span>
+	<!--<h2 class="">{label}</h2>-->
 	{image && (
-		<img class="contact-card__logo" src={image.src} alt={label} />
+		<img class="card__logo" src={image.src} alt={description} />
 	)}
 	{description && (
-		<span class="contact-card__description">{description}</span>
+		<div class="">{description}</div>
 	)}
 </a>
 
 <style>
-	.contact-card {
-		min-width: 150px;
-		min-height: 150px;
+	.card {
+		width: 40vw;
+		max-width: 180px;
 		text-decoration: none;
 		border: 1px solid var(--color-border);
 	}
 
-
-	.contact-card__logo {
+	.card__logo {
+		margin: 0.5rem;
 		width: 48px;
 		height: 48px;
 		object-fit: contain;
-	}
-
-	.contact-card__label {
-		font-weight: bold;
-	}
-
-	.contact-card__description {
-		font-size: 0.9rem;
-		opacity: 0.85;
 	}
 </style>

@@ -2,24 +2,28 @@
 import Layout from "@layouts/Layout.astro";
 import InfoBack from "@components/info/InfoBack.astro";
 import Horaires from "@components/info/Horaires.astro";
+import ButtonBack from "@components/info/ButtonBack.astro";
+import Material from "@utils/material.astro";
 ---
 
 <Layout>
     <article>
         <InfoBack/>
-        <h1>🏸 L'accès</h1>
+        <h1><ButtonBack/>L'accès <Material logo={"badminton"}/></h1>
+        <!--🏸-->
+
 
         <section class="card">
             <div class="text">
-                <p>L'accès à la salle est limitée aux adhérents</p>
-                <p>Le montant de l'adhésion est de : </p>
+                <p>l'accès est limitée aux adhérents</p>
+                <p>l'adhésion est de : </p>
                 <p>65€ par an</p>
-                <p>L'adhérent s'inscrit sur un des trois créneaux disponibles</p>
+                <!--<p>L'adhérent s'inscrit sur un des trois créneaux disponibles</p>-->
 
             </div>
         </section>
 
-        <a class="card button" href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> ➡️
+        <a class="card button bordered" href="https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire"> ➡️
             Inscription sur Hello Asso</a>
 
         <Horaires></Horaires>

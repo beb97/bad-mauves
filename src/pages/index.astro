@@ -1,9 +1,34 @@
 ---
-import Home from '../components/main/Home.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Horaires from "@components/info/Horaires.astro";
+import {withBase} from "@utils/paths.ts";
+import Layout from "@layouts/Layout.astro";
 ---
 
+
 <Layout>
-	<Home />
+
+
+    <article class="cards v" id="club">
+        <img src={withBase("/logo/logo_club_1.svg")} alt="Les fous du volant"/>
+        <section>
+            <h2 class="card">club de badminton</h2>
+            <h3>mauves-sur-loire</h3>
+        </section>
+        <div class="card button bordered">
+            <a href={withBase("/infos/acces")}> conditions d'accès</a>
+        </div>
+    </article>
+
 </Layout>
+<style>
+
+    #club {
+        height: 70vh;
+        max-height: 700px;
+        justify-content: space-around;
+    }
+
+    article {
+        gap: 2rem;
+    }
+</style>

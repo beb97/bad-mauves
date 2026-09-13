@@ -8,18 +8,18 @@ interface Props {
 const { initiales, nom, role } = Astro.props;
 ---
 
-<article class="card member-card">
-    <div class="card__titre">
+<article class="card bordered">
+    <h2 class="card__titre">
         {initiales}
-    </div>
+    </h2>
 
-    <div class="member-card__content">
-        <h4 class="member-card__name">
+    <div class="">
+        <h3 class="">
             {nom}
-        </h4>
+        </h3>
 
         {role && (
-                <p class="member-card__role">
+                <p class="">
                     {role}
                 </p>
         )}
@@ -27,28 +27,4 @@ const { initiales, nom, role } = Astro.props;
 </article>
 
 <style>
-    .member-card {
-        width: 220px;
-        min-height: 160px;
-    }
-
-    .member-card:hover {
-        transform: translateY(-4px);
-        background: var(--color-active);
-    }
-
-    .member-card__initials {
-
-    }
-
-    .member-card__name {
-        margin: 0;
-        font-size: 1.1rem;
-    }
-
-    .member-card__role {
-        margin: 0.25rem 0 0;
-        font-size: 0.95rem;
-        opacity: 0.85;
-    }
 </style>

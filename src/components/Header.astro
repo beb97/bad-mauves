@@ -4,72 +4,100 @@ const currentPath = Astro.url.pathname;
 
 
 const links = [
-	{ href: withBase(""), label: "l'asso" },
-	{ href: withBase("infos"), label: "infos" },
-	{ href: withBase("contact"), label: "contacts" },
+    // {href: withBase(""), label: "l'asso"},
+    {href: withBase("infos"), label: "infos"},
+    {href: withBase("contact"), label: "liens"},
 ];
 
+const isHomePage = currentPath === withBase("/");
+
 const isActive = (href: string) => {
-	if (href === withBase("/")) {
-		return currentPath === withBase("/");
-	}
-	return currentPath.startsWith(href);
+    if (href === withBase("/")) {
+        return currentPath === withBase("/");
+    }
+    return currentPath.startsWith(href);
 };
 ---
 
 <header>
-	<nav>
-		<ul>
-			{links.map((link) => (
-				<li
-					class:list={{ active: isActive(link.href) }}
-				>
-					<a href={link.href}
-					   class:list={{ active: isActive(link.href) }}
-					   aria-current={isActive(link.href) ? "page" : undefined}
-					>
-						{link.label}
-					</a>
-				</li>
-			))}
-		</ul>
-	</nav>
+    <div>
+    <a href={withBase("/")}
+       class:list={{
+           logo: true,
+           "hidden": isHomePage,
+       }}>
+        <img src={withBase("/logo/logo_club_1.png")} alt="Les fous du volant"/>
+    </a>
+    <nav>
+        <ul>
+            {links.map((link) => (
+                <li class:list={{active: isActive(link.href)}}>
+                    <a href={link.href}
+                       class:list={{active: isActive(link.href)}}
+                       aria-current={isActive(link.href) ? "page" : undefined}
+                    >
+                        {link.label}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+    </div>
 </header>
 
 <style>
 
-	header {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		padding-bottom: 1em;
-	}
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1em;
+    }
 
-	ul {
-		display: flex;
-		justify-content: space-around;
-		list-style: none;
-	}
+    header div {
+        max-width: 600px;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        list-style: none;
+    }
 
 
-	li {
-		padding: 0.5em;
-		border: 2px solid transparent;
-		border-radius: 2em;
-	}
+    li {
+        padding: 0.5em;
+        border: 2px solid transparent;
+        border-radius: 2em;
+    }
 
-	li.active {
-		background: linear-gradient(135deg, var(--color-active), transparent);
-	}
+    li.active {
+        background: linear-gradient(135deg, var(--color-active), transparent);
+    }
 
-	li:hover {
-		border: 2px solid red;
-		border-color: var(--color-active);
-		background: var(--color-active);
-	}
+    li:hover {
+        border: 2px solid red;
+        border-color: var(--color-active);
+        background: var(--color-active);
+    }
 
-	a.active {
-		font-weight: bold;
-		color: var(--color-text);
-	}
+    header img {
+        padding: 0.5em;
+        width: 100px;
+    }
+
+    a.active {
+        font-weight: bold;
+        color: var(--color-text);
+    }
 </style>

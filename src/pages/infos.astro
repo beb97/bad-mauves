@@ -1,8 +1,60 @@
 ---
-import Main from "../components/info/Main.astro";
-import Layout from "../layouts/Layout.astro";
----
+import type {InfoLink} from "@components/info/InfoCard.astro";
+import InfoCard from "@components/info/InfoCard.astro";
+import {withBase} from "@utils/paths.ts";
+import Layout from "@layouts/Layout.astro";
 
+const infos: InfoLink[] = [
+	{
+		logo: 'badminton',
+		// logo: '🏸',
+		nom: "L'accès",
+		lien: '/infos/acces',
+	},
+	{
+		logo: 'stadium️',
+		// logo: '🏟️',
+		nom: "La salle",
+		lien: '/infos/salle',
+	},
+	{
+		logo: 'history',
+		// logo: '🌟',
+		nom: "L'histoire",
+		lien: '/infos/histoire',
+	},
+	{
+		logo: 'diversity_4',
+		// logo: '🦸‍',
+		nom: "Le bureau",
+		lien: '/infos/membres',
+	},
+	{
+		// logo: '📜',
+		logo: 'gavel',
+		nom: "Les règles",
+		lien: '/infos/rules',
+	},
+]
+
+---
 <Layout>
-	<Main />
+<article class="">
+	<!--<section class="card" id="club">-->
+	<!--	<img src={withBase("/logo/logo_club_1.png")} alt="Les fous du volant"/>-->
+	<!--</section>-->
+	<section class="cards">
+
+		{infos.map((info: InfoLink) => (
+			<InfoCard
+				logo={info.logo}
+				nom={info.nom}
+				lien={info.lien}
+			/>
+		))}
+	</section>
+</article>
 </Layout>
+
+<style>
+</style>

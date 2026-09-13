@@ -1,9 +1,25 @@
 ---
-import Main from '../components/contact/Main.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "@layouts/Layout.astro";
+import {links} from "@data/contacts.ts";
+import ContactCard from "@components/contact/ContactCard.astro";
+import {withBase} from "@utils/paths.ts";
 ---
 
 <Layout>
-	<Main />
+	<article>
+		<!--<section class="card" id="club">-->
+		<!--	<img src={withBase("/logo/logo_club_1.png")} alt="Les fous du volant"/>-->
+		<!--</section>-->
+		<section class="cards">
+			{links.map((link) => (
+				<ContactCard
+					href={link.href}
+					logo={link.logo}
+					description={link.description}
+				/>
+			))}
+		</section>
+	</article>
 </Layout>
+<style>
+</style>

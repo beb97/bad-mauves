@@ -16,12 +16,12 @@ const {
 } = Astro.props;
 ---
 
-<section class="horaire-card">
-    <div class="card__titre horaire-card__day">
+<section class="card bordered">
+    <h2 class="card__titre">
         {jour}
-    </div>
+    </h2>
 
-    <div class="horaire-card__content">
+    <div class="card__content">
         {publicConcerne &&
                 <div>
                     {publicConcerne}
@@ -36,24 +36,8 @@ const {
 
 </section>
 
-<style>
-    .horaire-card {
-        margin: 0.25rem 0 0;
-        border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-        border-radius: 20px;
-    }
-
-    .card__titre {
-        padding: 0 1.5em;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .horaire-card__content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 0.5em;
+<style scoped>
+    .card {
+        gap: 0;
     }
 </style>

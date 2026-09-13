@@ -3,32 +3,27 @@ import type {Contacts} from "@components/contact/ContactCard.astro";
 export const links : Contacts[] = [
     {
         href: "https://www.helloasso.com/associations/les-fous-du-volant-mauves-sur-loire",
-        label: "Hello Asso",
         logo: "logo_asso.png",
-        description: "Inscriptions",
+        description: "s'inscrire",
     },
     {
         href: "https://www.facebook.com/badmauves.fr/?locale=fr_FR",
-        label: "Facebook",
         logo: "logo_fb.png",
-        description: "Actualités",
+        description: "actu",
     },
     {
         href: "mailto:contact@lesfousduvolant.org",
-        label: "Contacter",
         logo: "logo_mail.png",
-        description: "Le bureau",
+        description: "contact",
     },
     {
         href: "https://www.scoreouest.fr/FR/",
-        label: "Site",
         logo: "logo_old_site.png",
-        description: "Actuel",
+        description: "site actuel",
     },
     {
-        href: "https://salle.3douest.com/accueil.php?h=1032",
-        label: "Salle",
+        href: "https://salle.3douest.com/internaute.php?module=mauvessurloire",
         logo: "logo_ouest.png",
-        description: "Réservations",
+        description: "dispos salle",
     },
 ];
