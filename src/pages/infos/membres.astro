@@ -7,45 +7,52 @@ import ButtonBack from "@components/info/ButtonBack.astro";
 import Layout from "@layouts/Layout.astro";
 
 export interface Membre {
-	initiales: string;
-	nom: string;
-	role?: string;
-	}
-
+    initiales: string;
+    nom: string;
+    role?: string;
+}
 ---
 <Layout>
-<article class="members-card">
-	<section class="members-section">
-		<InfoBack />
-		<!--🦸‍-->
-		<h1><ButtonBack/> Le bureau <Material logo={"diversity_4"}/></h1>
-		<!--<Material logo={"diversity_4"}/>-->
+    <article class="members-card">
+        <InfoBack/>
+        <!--🦸‍-->
+        <h1>
+            <ButtonBack/>
+            Le bureau
+            <Material logo={"diversity_4"}/>
+        </h1>
+        <section class="members-section">
 
-		<div class="cards">
-			{bureau.map((personne: Membre) => (
-				<MembreCard
-					initiales={personne.initiales}
-					nom={personne.nom}
-					role={personne.role}
-				/>
-			))}
-		</div>
+            <!--<Material logo={"diversity_4"}/>-->
 
-		<h3>Les membres</h3>
-		<div class="cards">
-			{membres.map((personne: Membre) => (
-				<MembreCard
-					initiales={personne.initiales}
-					nom={personne.nom}
-					role={personne.role}
-				/>
-			))}
-		</div>
-	</section>
-</article>
+            <div class="cards">
+                {bureau.map((personne: Membre) => (
+                        <MembreCard
+                                initiales={personne.initiales}
+                                nom={personne.nom}
+                                role={personne.role}
+                        />
+                ))}
+            </div>
+        </section>
+    </article>
+    <article class="members-card">
+        <h2>Les membres</h2>
+        <section>
+            <div class="cards">
+                {membres.map((personne: Membre) => (
+                        <MembreCard
+                                initiales={personne.initiales}
+                                nom={personne.nom}
+                                role={personne.role}
+                        />
+                ))}
+            </div>
+        </section>
+    </article>
 </Layout>
 <style>
-	ul {
-		list-style-type: none;
-	}
+    ul {
+        list-style-type: none;
+    }
 </style>

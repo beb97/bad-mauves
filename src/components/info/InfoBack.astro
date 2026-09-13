@@ -1,8 +1,17 @@
 ---
-import {withBase} from "../../utils/paths.ts";
+import {withBase} from "@utils/paths.ts";
 ---
-<!--<a class="bordered" id="back"> ↩ </a>-->
-<a class="bordered" id="back" href={withBase("/infos")}> ↩ </a>
+<a class="bordered" id="back" data-back-button href={withBase("/infos")}> ↩ </a>
+
+<script>
+    import {goBack} from "@utils/paths.ts";
+
+    const backButton = document.querySelector("[data-back-button]");
+
+    backButton?.addEventListener("click", (event) => {
+        goBack(event);
+    });
+</script>
 
 <style>
     #back {
@@ -18,5 +27,6 @@ import {withBase} from "../../utils/paths.ts";
         justify-content: center;
         text-decoration: none;
         background-color: color-mix(in srgb, var(--color-background) 70%, transparent);
+        opacity: 0.3;
     }
 </style>

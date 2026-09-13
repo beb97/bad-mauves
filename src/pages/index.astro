@@ -14,17 +14,26 @@ import Layout from "@layouts/Layout.astro";
             <h2 class="card">club de badminton</h2>
             <h3>mauves-sur-loire</h3>
         </section>
-        <div class="card button bordered">
-            <a href={withBase("/infos/acces")}>inscription</a>
-        </div>
+        <section class="cards h">
+            <div class="card button bordered">
+                <a href={withBase("/infos/acces")}>inscription</a>
+            </div>
+            <div class="card button bordered">
+                <a href={withBase("/infos/horaires")}>horaires</a>
+            </div>
+        </section>
+
     </article>
 
 </Layout>
 <style>
 
+    article img {
+        max-width: 600px;
+    }
+
     #club {
-        height: 70vh;
-        max-height: 700px;
+        min-height: 70vh;
         justify-content: space-around;
     }
 

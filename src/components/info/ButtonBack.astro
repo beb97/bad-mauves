@@ -2,7 +2,17 @@
 import {withBase} from "@utils/paths.ts";
 import Material from "@utils/material.astro";
 ---
-<a href={withBase("/infos")}> <Material logo={"arrow_back"}/> </a>
+<a href={withBase("/infos")} data-back-arrow> <Material logo={"arrow_back"}/> </a>
+
+<script>
+    import {goBack} from "@utils/paths.ts";
+
+    const backButton = document.querySelector("[data-back-arrow]");
+
+    backButton?.addEventListener("click", (event) => {
+        goBack(event);
+    });
+</script>
 
 
 <style>
