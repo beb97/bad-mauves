@@ -1,9 +1,14 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import { ClientRouter, fade } from "astro:transitions";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 import background from "@assets/img/bg2.webp";
 import Font from "astro/components/Font.astro";
 import Image from "astro/components/Image.astro";
+import '@style/css/variables.css';
+import '@style/css/main.css';
+import {withBase} from "../utils/paths";
+// import {fade} from "astro/dist/transitions";
 
 interface Props {
     title?: string;
@@ -20,8 +25,9 @@ const {
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`}/>
+    <link rel="icon" type="image/svg+xml" href={withBase("/cursor.svg")}/>
     <Font cssVariable="--font-raleway"/>
+    <Font cssVariable="--font-lexend"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
@@ -31,190 +37,19 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <meta name="generator" content={Astro.generator}/>
     <meta name="description" content={description}/>
+    <ClientRouter/>
     <title>{title}</title>
 </head>
 <body>
 <Image id="background" src={background} alt="" fetchpriority="high"/>
 <Header/>
-<main id="container">
+<main id="container" transition:animate={fade({ duration: '0.2s' })} >
     <slot/>
     <div id="spacer"></div>
 </main>
 <Footer/>
 </body>
 </html>
-
 <style is:global>
-    :root {
-        --color-primary: #7c3aed;
-        --color-primary-dark: #5b21b6;
-        --color-secondary: #f59e0b;
-        --color-background: #26024e;
-        --color-surface: #ffffff;
-        --color-text: #dbd3e4;
-        --color-text-muted: #b3a0d3;
-        --color-border: #e5e7eb;
-        --color-active: #4b1e91;
-    }
 
-    * {
-        box-sizing: border-box;
-        color: var(--color-text);
-        margin: 0;
-        padding: 0;
-    }
-
-    html,
-    body {
-        margin: 0;
-        width: 100vw;
-        min-height: 100vh;
-        font-size: 20px;
-        cursor: url("/cursor.svg") 0 0, auto;
-        font-family: "Inter", sans-serif;
-        font-weight: 300;
-        color: var(--color-text);
-        background-color: color-mix(in srgb, var(--color-background) 80%, transparent);
-    }
-
-    body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    main {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        max-width: 600px;
-        position: relative;
-        margin: 0 auto;
-    }
-
-    article {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5em;
-        margin-bottom: 1em;
-    }
-
-    section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    a:hover,
-    button:hover {
-        cursor: url("/cursor_hover.svg") 0 0, pointer;
-    }
-
-    h1 {
-        margin: 0;
-    }
-
-    h2, h3 {
-        font-weight: normal;
-    }
-
-    article img {
-        width: 95vw;
-        max-width: 590px;
-    }
-
-    p {
-        font-size: 0.8rem;
-    }
-
-    #background {
-        position: fixed;
-        width: 100vw;
-        height: calc(100vh + 60px);
-        z-index: -1;
-        filter: blur(10px);
-        background-color: var(--color-background);
-        object-fit: cover;
-    }
-
-    .link {
-        text-decoration: underline;
-    }
-
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .card {
-        border-radius: 1.25rem;
-        color: var(--color-text);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .h {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .v {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .bordered {
-        border: 1px solid var(--color-border);
-        overflow: hidden;
-    }
-
-    .hidden {
-        visibility: hidden;
-    }
-
-    .button {
-        background: linear-gradient(135deg, var(--color-active), transparent);
-        box-shadow: 1px 1px 2px 1px black;
-    }
-
-    .button:hover {
-        transform: translateY(-4px);
-        background: var(--color-active);
-    }
-
-    .card__titre {
-        background: var(--color-text);
-        color: var(--color-background);
-        display: flex;
-        justify-content: center;
-        align-self: stretch;
-        padding: 0.4rem;
-        flex-direction: column;
-    }
-    .card__content {
-        padding: 0.5em;
-        flex: 1;
-    }
-
-    @media screen and (max-width: 768px) {
-        main {
-            display: flex;
-            flex-direction: column;
-        }
-    }
 </style>

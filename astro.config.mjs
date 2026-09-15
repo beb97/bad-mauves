@@ -18,5 +18,18 @@ export default defineConfig({
                 style: 'normal'
             }]
         }
-    }],
+    },
+        {
+            provider: fontProviders.local(),
+            name: "Lexend",
+            cssVariable: "--font-lexend",
+            options: {
+                variants: [{
+                    src: ['./src/assets/fonts/Lexend-VariableFont_wght.ttf'],
+                    weight: "100 900",
+                    style: 'normal'
+                }]
+            }
+        }
+    ],
 });

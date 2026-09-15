@@ -4,27 +4,44 @@ interface Props {
     description: string;
     url: string;
     date: string;
+    auteur: string;
 }
 
-const { title, description, url, date } = Astro.props;
+const {title, description, url, date, auteur} = Astro.props;
 
 const formattedDate = new Date(date).toLocaleDateString("fr-FR", {
     day: "2-digit",
     month: "short",
 });
+
+const formattedAuthor = auteur
+    .split(" ")
+    .filter(Boolean)
+    .map((part) => part[0]?.toUpperCase())
+    .join(" ");
+
 ---
 
-<section class="card h bordered">
-    <a class="card__titre" href={url}>
-        <time class="card__titre" datetime={date}>{formattedDate}</time>
-    </a>
-    <a class="card__content" href={url}>
-        <h2>{title}</h2>
-        <p>{description}</p>
+<section class="card bordered">
+
+    <a class="card h blog_item" href={url}>
+        <div class="card__info v">
+            <time class="card__info">{formattedAuthor}</time>
+            <time class="card__info" datetime={date}>{formattedDate}</time>
+        </div>
+        <div class="card__content">
+            <h2>{title}</h2>
+            <p>{description}</p>
+        </div>
     </a>
 </section>
 
 <style>
+
+    .blog_item {
+        background: linear-gradient(135deg, var(--color-active), transparent);
+    }
+
     .card {
         width: 90vw;
         max-width: 400px;

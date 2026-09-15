@@ -17,6 +17,7 @@ const articles = (await getCollection('actu', ({data}) => !data.draft))
                                 description={article.data.description}
                                 url={withBase(`/actu/${article.id}`)}
                                 date={article.data.date.toISOString()}
+                                auteur={article.data.author}
                         />
                 ))}
             </div>

@@ -28,11 +28,11 @@ const {logo, nom, lien} = Astro.props;
             <div class="card__content">
                 <table>
                     <tr>
-                        <th>public</th>
+                        <th>formule</th>
                         <th>coût annuel</th>
                     </tr>
                     <tr>
-                        <td>jeu adulte</td>
+                        <td>loisir adulte</td>
                         <td>65€</td>
                     </tr>
                     <tr>
@@ -69,7 +69,7 @@ const {logo, nom, lien} = Astro.props;
     table {
         border-collapse: separate;
         border-spacing: 0;
-        border-radius: 10px;
+        border-radius: var(--border-radius);
     }
 
     th {
