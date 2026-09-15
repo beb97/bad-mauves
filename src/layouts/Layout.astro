@@ -31,18 +31,15 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
           rel="stylesheet">
-    <!--<link href="https://fonts.googleapis.com/css2?family=Valley+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">-->
-    <!--<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <meta name="generator" content={Astro.generator}/>
     <meta name="description" content={description}/>
-    <ClientRouter/>
     <title>{title}</title>
 </head>
 <body>
 <Image id="background" src={background} alt="" fetchpriority="high"/>
 <Header/>
-<main id="container" transition:animate="fade">
+<main id="container">
     <slot/>
     <div id="spacer"></div>
 </main>
