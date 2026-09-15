@@ -1,6 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import {type CollectionEntry, getCollection, render} from 'astro:content';
+import {withBase} from "@utils/paths.ts";
+import ButtonBack from "@components/info/ButtonBack.astro";
 
 interface Props {
     article: CollectionEntry<'actu'>;
@@ -26,7 +28,10 @@ const formattedDate = article.data.date.toLocaleDateString('fr-FR', {
 
 <Layout>
     <article class="blog-post">
+        <ButtonBack target="/actu"></ButtonBack>
+        <a href={withBase("/actu")}>
         <h1>{article.data.title}</h1>
+        </a>
         <div class="card bordered h">
             <div>
                 <time class="card__content" datetime={article.data.date.toISOString()}>{formattedDate}</time>

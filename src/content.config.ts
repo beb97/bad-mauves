@@ -10,6 +10,10 @@ const actu = defineCollection({
         date: z.coerce.date(),
         author: z.string().default('Admin'),
         tags: z.array(z.string()).default([]),
+        image: z.object({
+            url: z.string(),
+            alt: z.string()
+        }),
         draft: z.boolean().default(false),
     }),
 });

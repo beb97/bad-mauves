@@ -1,8 +1,6 @@
 ---
 import MembreCard from "@components/info/Membre.astro";
 import {membres, bureau} from "@data/membres.ts";
-import InfoBack from "@components/info/InfoBack.astro";
-import Material from "@utils/material.astro";
 import ButtonBack from "@components/info/ButtonBack.astro";
 import Layout from "@layouts/Layout.astro";
 import InfoCard from "@components/info/InfoCard.astro";
@@ -15,33 +13,30 @@ export interface Membre {
 ---
 <Layout>
     <article class="members-card">
-        <InfoBack/>
+        <ButtonBack target="/infos"/>
         <!--🦸‍-->
-        <div class="cards">
+        <section class="cards">
             <InfoCard
                     logo="diversity_4" ,
                     nom="bureau" ,
                     lien="/infos"
             ></InfoCard>
-        </div>
-        <section class="members-section">
-
-            <!--<Material logo={"diversity_4"}/>-->
-
-            <div class="cards">
-                {bureau.map((personne: Membre) => (
-                        <MembreCard
-                                initiales={personne.initiales}
-                                nom={personne.nom}
-                                role={personne.role}
-                        />
-                ))}
-            </div>
         </section>
-    </article>
-    <article class="members-card">
-        <h2>Les membres</h2>
+        <section class="members-section">
+            <h2>Le bureau</h2>
+                <div class="cards">
+                    {bureau.map((personne: Membre) => (
+                            <MembreCard
+                                    initiales={personne.initiales}
+                                    nom={personne.nom}
+                                    role={personne.role}
+                            />
+                    ))}
+                </div>
+        </section>
+
         <section>
+            <h2>Les membres</h2>
             <div class="cards">
                 {membres.map((personne: Membre) => (
                         <MembreCard

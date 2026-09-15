@@ -3,31 +3,31 @@ import type {InfoLink} from "@components/info/InfoCard.astro";
 export const infos : InfoLink[] = [
     {
         logo: 'badminton',
-        nom: "inscription",
+        nom: "Inscription",
         lien: '/infos/acces',
     },	{
         logo: 'schedule',
-        nom: "horaires",
+        nom: "Horaires",
         lien: '/infos/horaires',
     },
     {
         logo: 'stadium️',
-        nom: "salle",
+        nom: "Salle",
         lien: '/infos/salle',
     },
     {
         logo: 'diversity_4',
-        nom: "bureau",
+        nom: "Bureau",
         lien: '/infos/membres',
     },
     {
         logo: 'gavel',
-        nom: "règles",
+        nom: "Règles",
         lien: '/infos/rules',
     },
     {
         logo: 'history',
-        nom: "histoire",
+        nom: "Histoire",
         lien: '/infos/histoire',
     },
 ];

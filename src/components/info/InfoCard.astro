@@ -15,13 +15,13 @@ const {logo, nom, lien} = Astro.props;
 <a href={withBase(lien)}>
     <div class="card button bordered h">
         <div class="card__titre"><Material logo={logo}/></div>
-        <div class="card__content"> <h3>{nom}</h3></div>
+        <div class="card__content"> <h2>{nom}</h2></div>
     </div>
 </a>
 
 <style>
     .card__content {
-        width: 40vw;
-        max-width: 150px;
+        width: 70vw;
+        max-width: 200px;
     }
 </style>

@@ -1,13 +1,18 @@
 ---
+import {withBase} from "@utils/paths.ts";
 interface Props {
     title: string;
     description: string;
     url: string;
     date: string;
+    image: {
+        url: string;
+        alt: string;
+    };
     auteur: string;
 }
 
-const {title, description, url, date, auteur} = Astro.props;
+const {title, description, url, date, auteur, image} = Astro.props;
 
 const formattedDate = new Date(date).toLocaleDateString("fr-FR", {
     day: "2-digit",
@@ -33,6 +38,9 @@ const formattedAuthor = auteur
             <h2>{title}</h2>
             <p>{description}</p>
         </div>
+        <!--<div>-->
+        <!--    <img src={withBase(image.url)} width="200" alt={image.alt} />-->
+        <!--</div>-->
     </a>
 </section>
 

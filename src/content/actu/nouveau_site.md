@@ -4,6 +4,10 @@ description: "Mise en ligne du site"
 date: 2026-09-10
 author: "Pierre Bébon"
 tags: ["actu"]
+image: {
+  url: "/images/wip.jpg",
+  alt: "toto"
+}
 draft: false
 ---
 Le nouveau site est en ligne depuis le 09 septembre. 
