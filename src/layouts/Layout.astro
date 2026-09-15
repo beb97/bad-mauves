@@ -34,12 +34,14 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <meta name="generator" content={Astro.generator}/>
     <meta name="description" content={description}/>
+    <ClientRouter></ClientRouter>
     <title>{title}</title>
 </head>
 <body>
 <Image id="background" src={background} alt="" fetchpriority="high"/>
 <Header/>
 <main id="container">
+<!--<main id="container" transition:animate="fade">-->
     <slot/>
     <div id="spacer"></div>
 </main>

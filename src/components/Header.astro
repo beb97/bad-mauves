@@ -24,28 +24,28 @@ const isActive = (href: string) => {
 
 <header>
     <div>
-    <a href={withBase("/")}
-       class:list={{
-           logo: true,
-           "hidden": isHomePage,
-       }}>
-        <Image src={logo} alt="Les fous du volant" width={90} height={70}
-               transition:name="logo" />
-    </a>
-    <nav>
-        <ul>
-            {links.map((link) => (
-                <li class:list={{active: isActive(link.href)}}>
-                    <a href={link.href}
-                       class:list={{active: isActive(link.href)}}
-                       aria-current={isActive(link.href) ? "page" : undefined}
-                    >
-                        {link.label}
-                    </a>
-                </li>
-            ))}
-        </ul>
-    </nav>
+        <a href={withBase("/")}
+           class:list={{
+               logo: true,
+               "hidden": isHomePage,
+           }}>
+            <Image src={logo} alt="Les fous du volant" width={90} height={70}
+                   transition:name="logo"/>
+        </a>
+        <nav>
+            <ul>
+                {links.map((link) => (
+                        <a href={link.href}
+                           class:list={{active: isActive(link.href)}}
+                           aria-current={isActive(link.href) ? "page" : undefined}
+                        >
+                            <li class:list={{active: isActive(link.href)}}>
+                                {link.label}
+                            </li>
+                        </a>
+                ))}
+            </ul>
+        </nav>
     </div>
 </header>
 
@@ -56,7 +56,7 @@ const isActive = (href: string) => {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding-bottom: em;
+        padding-bottom: 0em;
     }
 
     header div {
