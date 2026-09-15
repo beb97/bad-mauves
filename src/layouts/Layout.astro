@@ -1,5 +1,5 @@
 ---
-import { ClientRouter, fade } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import background from "@assets/img/bg2.webp";
@@ -8,7 +8,6 @@ import Image from "astro/components/Image.astro";
 import '@style/css/variables.css';
 import '@style/css/main.css';
 import {withBase} from "../utils/paths";
-// import {fade} from "astro/dist/transitions";
 
 interface Props {
     title?: string;
@@ -43,7 +42,7 @@ const {
 <body>
 <Image id="background" src={background} alt="" fetchpriority="high"/>
 <Header/>
-<main id="container" transition:animate={fade({ duration: '0.2s' })} >
+<main id="container" transition:animate="fade">
     <slot/>
     <div id="spacer"></div>
 </main>
